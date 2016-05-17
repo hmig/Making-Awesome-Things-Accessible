@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>An Inclusive Web</title>
+    <title>Making Awesome Things Accessible</title>
 
     <meta name="description" content="Making the web a better place.">
     <meta name="author" content="Heather Migliorisi">
@@ -14,8 +14,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+    <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,11 +34,13 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
 
     <style>
+        .reveal h1, .reveal h2{
+            /*font-family: 'Fredericka the Great', cursive;*/
+            /*font-family: 'Kranky', cursive;*/
+            /*font-weight: 100;*/
+        }
         ol.no-num {
             list-style: none;
         }
@@ -84,17 +90,22 @@
             -o-transition: all .2s linear;
             transition: all .2s linear;
         }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+             text-shadow: none;
+        }
         .reveal pre {
             margin: 15px 0;
         }
         footer {
             position: fixed;
-            height: 26px;
+            height: 30px;
             width: 100%;
-            bottom: 2em;
-            left: 2em;
+            bottom: 0;
+            left: 0;
             font-weight: 900;
-            font-family: monospace;
+            font-family: Gotham-Round, sans-serif;
+            padding: 2em;
+            background: rgba(241, 241, 241, 0.99);
         }
 
         .callout-letter {
@@ -130,6 +141,106 @@
             vertical-align: text-bottom !important;
         }
 
+        .float-left{
+            float:left;
+        }
+        .float-right{
+            float:right;
+        }
+
+        footer p {
+            margin: 20px 2em 20px 0;
+            line-height: 1.3;
+        }
+
+        .reveal small.image-credit-top{
+            position: absolute;
+            bottom: 4px;
+            right: 40px;
+            font-size: 10px;
+            line-height: 1em;
+        }
+
+        .reveal h1.disclaimer{
+            /*font-family: 'Kranky';*/
+            text-align: left;
+            font-size: 3.5em;
+            color: gainsboro;
+        }
+        html.bg-contain div.slide-background.present {
+            background-size: contain;
+        }
+        html.bg-filter div.slide-background.present, .gray-filter {
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+
+        #svg-cat {
+            max-height: 100vh;
+        }
+
+        .cls-1 {
+            fill: #e4e3e5;
+        }
+
+        .cls-2 {
+            fill: #ada6ad;
+        }
+
+        .cls-3 {
+            fill: #d2d0d3;
+        }
+
+        .cls-4 {
+            fill: #79bf84;
+        }
+
+        .cls-10, .cls-11, .cls-13, .cls-5, .cls-8, .cls-9 {
+            fill: none;
+            stroke-miterlimit: 10;
+        }
+
+        .cls-5 {
+            stroke: #e4e3e5;
+        }
+
+        .cls-6 {
+            fill: #ff88b3;
+        }
+
+        .cls-7 {
+            fill: #d86694;
+        }
+
+        .cls-8 {
+            stroke: #ff88b3;
+            stroke-width: 2px;
+        }
+
+        .cls-9 {
+            stroke: #d86694;
+        }
+
+        .cls-10 {
+            stroke: #6c6d6c;
+        }
+
+        .cls-11 {
+            stroke: #222322;
+        }
+
+        .cls-12 {
+            fill: #2f302f;
+        }
+
+        .cls-13 {
+            stroke: #2f302f;
+        }
+
+        .cls-14 {
+            fill: #fafcfa;
+        }
+
     </style>
 </head>
 
@@ -144,222 +255,107 @@
             <div class="slides">
                 <section data-background="images/accessibility-dark.jpg">
                     <div class="intro">
-                        <h1 style="color:white">An Inclusive Web</h1>
-                        <h2>Heather Migliorisi</h2>
+                        <h1 style="color:beige;">Making Awesome Things Accessible</h1>
+                        <h2 style="color:crimson;">Heather Migliorisi</h2>
                     </div>
                     <aside class="notes">
                         <p>Hi.</p>
-                        <p>My name is Heather Migliorisi and I used to be the Senior UI Developer for GiftCards.com.</p>
-                        <p>I've been working on making our site accessible for the last year and a half.</p>
-                        <p>We have a ways to go, but one release after next, we are getting there.</p>
-                        <p>So, what do I mean when I say accessibility?</p>
+                        <p>My name is Heather Migliorisi and I'm a Software Engineer for BlackHawk Network and I work on the site GiftCards.com.</p>
                     </aside>
                 </section>
-                <section>
-                    <h1 class="no-shadow">What is (Web) Accessibility?</h1>
+                <section data-background="#333">
+                    <h1 class="disclaimer">Disclaimer: Everything presented here is my own and not reflect the views of my employer.</h1>
+                    <aside class="notes">
+                        <p>Disclaimer...</p>
+                    </aside>
                 </section>
-                <section data-background="images/what-is-accessibility3.jpg">
-                    <section>
-                        <div>
-                            <blockquote>
-                                <p class="left-align">Accessibility means a digital world for everyone, regardless of where, when, why, and how you consume the content that is being communicated. It’s communication that’s non-discriminatory in every way. <br><br>-from <a href="http://simplyaccessible.com/article/accessibility-is/">simplyaccessible.com</a></p>
-                            </blockquote>
-                        </div>
-                        <aside class="notes">
-                            <p>I like the definition provided by Simply Accessible that was the result of a survey they did asking folks what accessibility meant to them. </p>
-                            <p>The definition that came out of that was:</p>
-                            <p>Accessibility means a digital world for everyone,</p>
-                            <p> regardless of where, when, why, and how the content that is being communicated is consumed. </p>
-                            <p> It’s communication that’s non-discriminatory in every way. </p>
-                        </aside>
-                    </section>
+                <section data-background="#333">
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 5em;">Making Awesome Things Accessible</h1>
+                </section>
+                <section data-background="#333">
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 6em;">What are Awesome Things?</h1>
+                </section>
+                <section data-background="images/Opensource.png" data-state="bg-contain">
+                    <h1 class="why" style="margin: -.5em -2%; width: 110%; font-size: 3.5em;">Open Source Projects are AWESOME!!!</h1>
+                    <aside class="notes">
+                        <ol>
+                            <li></li>
+                        </ol>
+                    </aside>
+                </section>
+                <section data-background="#333">
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 6em;">What is (Web) Accessibility?</h1>
+                </section>
+                <section data-background="images/accessibility-dark.jpg">
                     <section>
                         <div>
                             <blockquote class="no-quote">
-                                <p class="left-align">Accessibility means a digital world for everyone.</p>
+                                <p class="left-align">Web Accessibility - A digital world for everyone, regardless of ability.</p>
                             </blockquote>
                         </div>
                         <aside class="notes">
-                            <p>Simply put:</p>
-                            <p>It means a digital world for everyone, regardless.</p>
-                        </aside>
-                    </section>
-                </section>
-                <section data-background="images/why-cat2.jpg">
-                    <h1 class="why">But, WHY?</h1>
-                </section>
-                <section data-background="images/reasons-2.jpg">
-                    <!--<h2>Reasons for Implementing Accessibility</h2>-->
-                    <section class="fragment fade-in">
-                        <h3>Money - Larger potential consumer/user base</h3>
-                        <p>Census Data Concludes: Nearly 1 in 5 People Have a Disability in the U.S.</p>
-                        <img src="images/Disability-Symbols.png" style="width:35%; margin-bottom: 0px;border: 0px;"  />
-                        <br>
-                        <aside class="notes">
-                            <p>According to Census Data: Nearly 1 in 5 People Have a Disability in the U.S.</p>
-                            <p>Opening your business up to 20% more of the population doesn't mean you'll make 20% more, but at least you won't be preventing it</p>
-                            <p>Think about how low of a usage % before you are able to stop supporting a browser version ... such as IE8.</p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Money/Legal - Work With the Government</h3>
-                        <img src="images/dot-gov.png" style="width:60%;">
-                        <p>Businesses must comply with Section 508 when supplying Electronic and Information Technology <strong>goods and services to the federal government</strong>. - <a href="http://webaim.org/articles/laws/usa/rehab" target="_blank">source webaim.org</a></p>
-                        <aside class="notes">
-                            <p>Also - Businesses must comply with Section 508 when supplying Electronic and Information Technology <strong>goods and services to the federal government</strong>.  </p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Money/Legal - Avoid lawsuits and/or bad press</h3>
-                        <img src="images/lawsuit.jpg" style="width:60%;">
-                        <small><a href="http://www.karlgroves.com/2011/12/08/reduction-of-legal-risk-as-accessibility-business-case/" target="_blank">Reduction of Legal Risk as Web Accessibility Business Case</a> and <a href="http://www.karlgroves.com/2011/11/15/list-of-web-accessibility-related-litigation-and-settlements/" target="_blank">List of Lawsuits</a></small>
-                        <aside class="notes">
-                            <p>Title III of the ADA requires that public and private establishments provide reasonable accommodations to the disabled and the DOJ has stated that law applies online as well..</p>
-                            <p>So - You can save money by preventing loss due to legal fees, settlement costs, and harm to brand</p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Moral - Improve the lives of people living with disabilities</h3>
-                        <img src="images/right-thing.jpg" style="width: 40%;">
-                        <aside class="notes">
-                            <p>Because it's the right thing to do</p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Benefits Everyone</h3>
-                        <div ><img src="images/woman-with-stroller-elevator.jpg" style="width: 40%;"></div>
-                        <aside class="notes">
-                            <p>How many people do you see using ramps and elevators that are not disabled?</p>
-                            <p>All of these folks are able to benefit from the features added for people labeled with having disabilities.</p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Benefits Everyone</h3>
-                        <div><img src="images/una-tweet.png" style="width:80%;"></div>
-                        <aside class="notes">
-                            <p>I stumbled upon some some tweets by Una Kravets about using a screen reader. </p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Benefits Everyone</h3>
-                        <div><img src="images/una-tweet2.png" style="width:80%;"></div>
-                        <aside class="notes">
-                            <p>And this one is a reminder that anyone could be using one.</p>
-                        </aside>
-                    </section>
-                    <section class="fragment">
-                        <h3>Benefits Everyone - Learning</h3>
-                        <div><img src="images/una-learning.png" style="width:50%;"></div>
-                        <small>Una Kravets: <a href="http://una.im/comprehension/" target="_blank">On Learning and Comprehension</a></small>
-                        <aside class="notes">
-                            <p>You can retain information better if you read and hear it at the same time.</p>
-                            <p>So - reading the transcript of a podcast while you listen to it </p>
-                            <p>OR listening to the screen reader while you read an article</p>
-                            <p>... doing can help you learn and retain the information</p>
-                            <p>Frankly, some people just prefer one over the other.</p>
-                    </section>
-                    <section class="fragment">
-                        <h3>Preparing for future technology</h3>
-                        <p><img src="images/zeldman-tweet.png" style="width:80%;"></p>
-                        <aside class="notes">
-                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                            <p>It means a digital world for everyone, regardless of ability.</p>
                         </aside>
                     </section>
                 </section>
                 <section data-background="images/disability-text.jpg">
-                    <h1 class="why" style="margin-top: 3.5em;margin-left: -1em;width: 120%;"> Classifications</h1>
+                    <h1 class="why" style="margin-top: 3.3em;margin-left: -1em;width: 120%;"> Classifications</h1>
                     <aside class="notes">
                         <p>Disability Classifications or Buckets</p>
                     </aside>
                 </section>
                 <section>
-                    <h1>Vision <small>(approx 8.1 million people)</small></h1>
+                    <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                        <path d="M5.234 21.187q-0.031 0-0.094-0.031-1.344-0.891-2.633-2.266t-2.18-2.812q-0.328-0.469-0.328-1.078 0-0.141 0.031-0.297t0.063-0.281 0.109-0.281 0.133-0.25 0.164-0.266 0.156-0.234 0.187-0.242 0.172-0.227q2.875-3.922 7.063-5.703-1.719-3.094-1.719-3.297 0-0.297 0.266-0.453 1.813-1 2-1 0.281 0 0.438 0.25l1.937 3.578q1.437-0.297 3-0.297 4.156 0 7.773 2.148t5.914 5.773q0.313 0.484 0.313 1.078t-0.313 1.078q-1.422 2.219-3.414 3.961t-4.352 2.742q1.719 3.094 1.719 3.297 0 0.313-0.266 0.453-1.813 1-1.984 1-0.297 0-0.453-0.25l-1.937-3.578-1-1.859-6.937-12.812 0.109-0.109q-0.906 0.375-1.547 0.734 0.047 0.078 1.984 3.656t3.797 7.016 1.859 3.484q0 0.109-0.141 0.141-0.203 0.047-1.125 0.047-0.891 0-0.938-0.109l-7.125-13.141q-0.609 0.438-1.281 1.062 0.375 0.672 3.344 6.148t2.969 5.539q0 0.156-0.172 0.156-0.219 0-1.289-0.344t-1.133-0.438l-1.656-3.078-3.5-6.453q-0.688 0.828-1.219 1.656 0.031 0.047 0.281 0.391t0.359 0.531l2.75 5.109q0 0.156-0.156 0.156zM18.203 19.594l0.766 1.422q4.266-1.734 7.031-6.016-2.812-4.328-7.172-6.078 1.047 1 1.609 2.32t0.562 2.758q0 1.656-0.734 3.133t-2.063 2.461zM13.25 10q0 0.313 0.219 0.531t0.531 0.219q1.344 0 2.297 0.953t0.953 2.297q0 0.313 0.219 0.531t0.531 0.219 0.531-0.219 0.219-0.531q0-1.969-1.391-3.359t-3.359-1.391q-0.313 0-0.531 0.219t-0.219 0.531zM18.969 8.984l-0.141-0.063 0.109 0.109z"></path>
+                    </svg>
+
+                        Vision <small>(approx 8.1 million people)</small></h1>
+
+                    <ul>
+                        <li class="fragment fade-in">Color Blindness: difficulty distinguishing between colors | <a href="images/color-blind-types.png" target="_blank">Example</a></li>
+                        <li class="fragment fade-in">Low Vision: blurry, clouded vision, central field loss, and tunnel vision | <a href="images/low-vision/low-vision.jpg" target="_blank">Example</a></li>
+                        <li class="fragment fade-in">Blindness: substantial, uncorrectable loss of vision in both eyes | <a href="https://www.youtube.com/watch?v=c0nvdiRdehw" target="_blank">Video</a></li>
+                    </ul>
                     <aside class="notes">
-                        <p>The first classification is vision</p>
+                        <p>Let's start with vision</p>
+                        <p>There are 4 types of visual classifications, the first is color blindness or difficulty distinguishing between colors.</p>
+                        <p>WEB content that simply relies on color to convey meaning may cause certain users to be lost</p>
+                        <p>such as Alerts or error messages, so it's best to add icons or special styling with those</p>
+
+                        <p>The next type of visual classification is Low Vision</p>
+                        <p>So - the majority of visually impaired are not completely blind...but have some sort vision impairment.</p>
+                        <p>such as: blurry, cloudy, center field loss or, the opposite, tunnel vision</p>
+                        <p>You can expect these users to zoom in on the page, so RWD can really help here.</p>
+
+
+                        <p>The next type of visual classification is blindness.</p>
+                        <ul>
+                            <li>Blindness ranges from See Nothing to having Light Perception (seeing shadows, shapes and figures) to Legally Blind (like looking through wax paper) to seeing geometric shapes and colors. </li>
+                            <li>The last section of the image is from the BBC, where a blind was describing what he sees and this was the rendered image from that: http://www.bbc.com/news/blogs-ouch-31487662</li>
+                        </ul>
+                        <p>!!!!!show video of blind man using iphone</p>
+
+                    </aside>
+                </section>
+                <section class="fragment fade-in" >
+                    <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                        <path d="M16.5 13q0 0.406 0.297 0.703t0.703 0.297 0.703-0.297 0.297-0.703q0-2.281-1.609-3.891t-3.891-1.609-3.891 1.609-1.609 3.891q0 0.406 0.297 0.703t0.703 0.297 0.703-0.297 0.297-0.703q0-1.453 1.031-2.477t2.469-1.023 2.469 1.023 1.031 2.477zM13.047 4q-1.828 0-3.492 0.711t-2.875 1.922-1.922 2.875-0.711 3.492q0 0.406 0.297 0.703t0.703 0.297 0.703-0.297 0.297-0.703q0-2.891 2.055-4.945t4.945-2.055 4.945 2.055 2.055 4.945q0 0.859-0.281 1.617t-0.586 1.164-0.93 1.125q-0.531 0.609-0.812 0.984t-0.68 1.039-0.578 1.422-0.18 1.648q0 1.656-1.172 2.828t-2.828 1.172q-0.406 0-0.703 0.297t-0.297 0.703 0.297 0.703 0.703 0.297q2.484 0 4.242-1.758t1.758-4.242q0-0.641 0.117-1.156t0.414-1 0.523-0.781 0.711-0.844q0.547-0.641 0.828-1.008t0.688-1.055 0.586-1.461 0.18-1.695q0-1.828-0.711-3.492t-1.922-2.875-2.875-1.922-3.492-0.711zM9.234 15.234l3.531 3.531-9.047 9.047q-0.187 0.187-0.453 0.187t-0.453-0.187l-2.625-2.625q-0.187-0.187-0.187-0.453t0.187-0.453zM25.188 0.187l2.625 2.625q0.187 0.187 0.187 0.453t-0.187 0.469l-3.641 3.641-0.406 0.391-1.109 1.109q-1.031-2.391-3.047-4.031l4.656-4.656q0.203-0.187 0.469-0.187t0.453 0.187z"></path>
+                    </svg>
+                        Hearing <small>(approx 7.6 million people)</small></h1>
+                    <aside class="notes">
+                        <p>The next classification is hearing</p>
+                        <p>providing closed captioning and transcripts are very important for people with hearing loss</p>
+                        <p>It's also important to consider providing video communications for ppl who prefer to communicate through sign language.</p>
                     </aside>
                 </section>
                 <section>
                     <section>
-                        <h3>Color Blindness: difficulty distinguishing between colors</h3>
-                        <div class="list-inline">
-                            <ul>
-                                <li>
-                                    <img src="images/color-blind/achromatopsia.png" class="no-shadow">
-                                    <br><p style="text-align: center;">Achromatopsia</p>
-                                </li>
-                                <li>
-                                    <img src="images/color-blind/deuteranopia.png" class="no-shadow">
-                                    <br><p style="text-align: center;">Deuteranopia</p>
-                                </li>
-                                <li>
-                                    <img src="images/color-blind/protanopia.png" class="no-shadow">
-                                    <br><p style="text-align: center;">Protanopia</p>
-                                </li>
-                                <li>
-                                    <img src="images/color-blind/tritanopia.png" class="no-shadow">
-                                    <br><p style="text-align: center;">Tritanopia</p>
-                                </li>
-                            </ul>
-                            <aside class="notes">
-                                <p>There are 4 types of visual classifications, the first is color blindness or difficulty distinguishing between colors.</p>
-                                <p>WEB content that simply relies on color to convey meaning may cause certain users to be lost</p>
-                                <p>such as Alerts or error messages, so it's best to add icons or special styling with those</p>
-                            </aside>
-                        </div>
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 21 32">
+                            <path d="M15.403 4.697c0 2.594-2.103 4.697-4.697 4.697s-4.697-2.103-4.697-4.697c0-2.594 2.103-4.697 4.697-4.697s4.697 2.103 4.697 4.697z"></path>
+                            <path d="M17.015 10.589h-12.758s-4.28 0-4.28 4.999v14.278c-0.004 0.047-0.006 0.101-0.006 0.155 0 1.153 0.935 2.088 2.088 2.088s2.088-0.935 2.088-2.088c0-0.055-0.002-0.109-0.006-0.163l0-12.751h0.742v14.15l11.366-0.058v-14.069h0.719v0.162c-0.004 0.047-0.006 0.101-0.006 0.155 0 1.153 0.935 2.088 2.088 2.088s2.088-0.935 2.088-2.088c0-0.055-0.002-0.109-0.006-0.163l0-1.628c0.162-5.069-4.117-5.069-4.117-5.069z"></path>
+                        </svg>
+                            Motor <small>(approx 19.9 million people)</small></h1>
                     </section>
-                    <section class="fragment fade-in">
-                        <h3>Color Blindness</h3>
-                        <div>
-                            <img src="images/color-blind/example.png" style="width: 75%;">
-                            <aside class="notes">
-                                <p>CanIUse.com offers Setting to make colors accessible</p>
-                                <p>on the left, it's normal AND on the right are the accessible colors</p>
-                            </aside>
-                        </div>
-                    </section>
-                    <section class="fragment fade-in">
-                        <h3>Low Vision: blurry, clouded vision, central field loss, and tunnel vision</h3>
-                        <div>
-                            <img src="images/low-vision/low-vision.jpg" style="width: 75%;">
-                            <aside class="notes">
-                                <p>The next type of visual classification is Low Vision</p>
-                                <p>So - the majority of visually impaired are not completely blind...but have some sort vision impairment.</p>
-                                <p>such as: blurry, cloudy, center field loss or, the opposite, tunnel vision</p>
-                                <p>You can expect these users to zoom in on the page, so RWD can really help here.</p>
-                            </aside>
-                        </div>
-                    </section>
-                    <section class="fragment fade-in">
-                        <h3>Blindness: substantial, uncorrectable loss of vision in both eyes</h3>
-                        <div>
-                            <a href="video/blind-using-iphone.m4v" target="_blank"><img src="images/blind/blind.jpg" ></a>
-                            <br>
-                            <small><a href="https://www.youtube.com/watch?v=c0nvdiRdehw" target="_blank">Video: https://www.youtube.com/watch?v=c0nvdiRdehw</a></small>
-                            <aside class="notes">
-                                <p>The next type of visual classification is blindness.</p>
-                                <ul>
-                                    <li>Blindness ranges from See Nothing to having Light Perception (seeing shadows, shapes and figures) to Legally Blind (like looking through wax paper) to seeing geometric shapes and colors. </li>
-                                    <li>The last section of the image is from the BBC, where a blind was describing what he sees and this was the rendered image from that: http://www.bbc.com/news/blogs-ouch-31487662</li>
-                                </ul>
-                                <p>!!!!!show video of blind man using iphone</p>
-                            </aside>
-                        </div>
-                    </section>
-                </section>
-                <section class="fragment fade-in" data-background="images/deaf-signing.jpg">
-                    <h1 class="text-shadow" style="margin-top: 3.5em; color:white;">Hearing <small>(approx 7.6 million people)</small></h1>
-                    <aside class="notes">
-                        <p>The next classification is hearing</p>
-                        <p>providing closed captioning and transcripts are very important for people with hearing loss</p>
-                        <p>It can also benefit people who prefer to read content vs listen to it</p>
-                        <p>Or someone who is in a crowded area without headphones.</p>
-                        <p>Providing closed captioning and transcripts also help with SEO because it provides bots with searchable info that would otherwise be lost.</p>
-                    </aside>
-                </section>
-                <section>
-                    <h1>Motor <small>(approx 19.9 million people)</small></h1>
-                </section>
-                <section>
                     <section>
                         <a href="video/mouth-stick.m4v" target="_blank"><img src="images/physical3.png" style="width:55%;" alt="image of a woman without arms using a mouthstick to type on a keyboard"></a>
                         <br>
@@ -405,8 +401,14 @@
                     </section>
                 </section>
                 <section>
-                    <section class="fragment fade-in reset-bg-pos2" data-background="images/brain-disorder.jpg">
-                        <h1 class="why" style="color:white;">Cognitive <small>(approx 9.4 million people)</small></h1>
+                    <section>
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 28 32">
+                            <path d="M27.713 10.564c0.336-1.093 0.308-1.989-0.056-2.69-0.308-0.616-0.813-1.009-1.289-1.317-0.336-1.205-1.177-2.242-2.55-2.634-0.364-0.588-0.813-1.121-1.373-1.485s-1.233-0.588-1.961-0.588c-1.289-1.177-2.69-1.793-4.119-1.849-0.056 0-0.112 0-0.14 0-0.757 0-1.513 0.168-2.27 0.476-0.785-0.224-1.905-0.504-3.278 0.14-0.841-0.14-1.709 0.14-2.438 0.757-0.532-0.056-1.065 0.028-1.457 0.224-0.476 0.224-0.813 0.56-1.121 0.897-1.513 0.476-2.466 1.177-3.026 1.961-0.56 0.757-0.785 1.513-1.093 2.13-0.532 0.42-1.065 0.925-1.317 1.681-0.28 0.813-0.308 1.821-0.028 3.082-0.168 1.625 0.14 2.914 0.981 3.783 0.813 0.813 2.018 1.065 3.335 0.953 1.009 0.644 2.298 0.701 3.699 0.476 0.757 0.532 1.625 0.953 2.662 1.177 0.28 0.897 0.504 1.821 0.869 2.718 0.42 1.009 1.177 1.961 2.466 2.494 0.701 0.28 1.317 0.897 1.681 1.401 0 0 0 0 0 0 0.224 0.336 0.336 0.616 0.701 0.897s0.785 0.336 1.289 0.364c1.261 0.084 2.242-0.476 2.998-1.065v0c0.028-0.028 0.056-0.056 0.084-0.084 0.112-0.14 0.168-0.28 0.196-0.392 0.056-0.224 0.028-0.336 0-0.504-0.056-0.336-0.224-0.785-0.616-1.653-0.028-0.056-0.028-0.112-0.056-0.14 0.336 0 0.672-0.056 0.981-0.14 1.149-0.28 2.158-0.925 2.83-1.429 1.093-0.813 1.821-1.429 2.27-2.074 0.504-0.757 0.729-2.158 0.364-2.97 0.112-0.112 0.224-0.196 0.336-0.336 0.869-1.009 0.953-2.494 0.448-4.259zM17.989 24.042c-0.308-0.028-0.392-0.028-0.42-0.056 0 0-0.112-0.14-0.364-0.532 0-0.028-0.028-0.028-0.028-0.056-0.476-0.644-1.233-1.485-2.382-1.933-0.897-0.364-1.261-0.869-1.625-1.653-0.224-0.532-0.42-1.205-0.644-1.933 0.28 0 0.56-0.028 0.869-0.056 0.532 0.196 1.205 0.532 2.074 0.56 0.476 0.028 1.233-0.252 1.821-0.532-0.056 0.981 0.112 1.961 0.672 2.718 0.14 0.196 0.308 0.392 0.504 0.532 0.196 0.532 0.42 1.009 0.616 1.429 0.252 0.532 0.336 0.841 0.42 1.065-0.42 0.308-0.869 0.476-1.513 0.448zM25.247 17.205c-0.28 0.392-0.897 0.953-1.905 1.737-0.56 0.42-1.485 0.953-2.27 1.177-0.392 0.112-0.757 0.112-1.065 0.056-1.149-0.392-1.373-2.158-0.953-3.138 0.504-0.196 0.981-0.504 1.457-0.925 0.336 0.168 0.672 0.308 1.065 0.336 0.532 0.056 1.149-0.084 1.709-0.42 0.785 0.028 1.513 0 2.158-0.168 0.168 0.42 0.168 0.897-0.196 1.345zM26.060 13.758c-0.392 0.42-1.233 0.701-2.606 0.644-0.084-0.616-0.112-0.925-0.112-0.981 0-0.028 0 0 0.028-0.056s0.084-0.112 0.196-0.224c0.196-0.224 0.168-0.56-0.028-0.757-0.112-0.084-0.224-0.14-0.364-0.14-0.168 0-0.308 0.084-0.42 0.196s-0.196 0.196-0.28 0.336-0.168 0.308-0.196 0.504c-0.056 0.364 0.028 0.672 0.112 1.317 0 0.028 0 0.056 0 0.084-0.252 0.168-0.42 0.196-0.644 0.168-0.28-0.028-0.616-0.196-0.981-0.42-0.308-0.196-0.785-0.14-1.009 0.14-0.616 0.701-0.981 0.925-1.485 1.009 0-0.028-0.028-0.028-0.028-0.056-0.168-0.308-0.224-0.448-0.252-0.56s-0.028-0.196 0.084-0.532c0.084-0.28-0.084-0.588-0.364-0.672-0.056-0.028-0.112-0.028-0.168-0.028-0.252 0-0.448 0.168-0.504 0.392-0.112 0.392-0.168 0.729-0.084 1.037s0.196 0.532 0.336 0.841c0 0 0 0.028 0.028 0.028-0.757 0.644-1.261 0.757-1.709 0.757-0.42-0.028-0.897-0.196-1.429-0.392 0-0.056 0-0.112 0-0.14-0.112-0.925-0.056-1.317 0.056-1.513 0.084-0.196 0.28-0.336 0.672-0.672 0.224-0.196 0.252-0.532 0.084-0.757-0.112-0.14-0.28-0.196-0.476-0.196-0.112 0-0.224 0.056-0.336 0.14-0.308 0.28-0.701 0.504-0.925 1.009-0.224 0.476-0.252 1.065-0.168 2.017-1.877 0.14-3.054-0.364-4.147-1.149 0-0.028 0-0.056 0-0.056 0.056-0.476 0.14-0.588 0.224-0.672s0.28-0.14 0.616-0.308c0.28-0.112 0.392-0.42 0.28-0.701-0.084-0.196-0.28-0.336-0.504-0.308-0.056 0-0.14 0.028-0.196 0.056-0.28 0.112-0.588 0.196-0.897 0.476s-0.504 0.729-0.588 1.345c0 0.028 0 0.028 0 0.056-1.233 0.168-2.13 0.056-2.606-0.336-0.168-0.14-0.392-0.196-0.588-0.168-1.177 0.14-1.933-0.056-2.354-0.476s-0.701-1.205-0.504-2.606c0-0.028 0-0.056 0-0.084 0.084-0.028 0.196-0.056 0.252-0.056 0.224-0.028 0.448 0.028 0.813 0.252 0.252 0.168 0.588 0.112 0.757-0.112s0.112-0.56-0.112-0.757c-0.028 0-0.028-0.028-0.056-0.028-0.392-0.28-0.785-0.42-1.177-0.476-0.14 0-0.252 0-0.364 0s-0.224 0.056-0.336 0.056c-0.084-0.672-0.028-1.149 0.084-1.457 0.112-0.336 0.308-0.588 0.616-0.841 0.308 0.252 0.785 0.644 1.457 0.841 0.476 0.14 1.037 0.168 1.681 0.056 0.028 0 0.084 0 0.112 0 0.084-0.028 0.196-0.056 0.28-0.084 0 0 0 0 0 0 0.196-0.056 0.364-0.112 0.56-0.196 0.869-0.364 1.429-0.308 1.821-0.168s0.644 0.392 0.813 0.588c0.196 0.224 0.532 0.252 0.757 0.084 0.224-0.196 0.252-0.532 0.084-0.757-0.224-0.28-0.644-0.701-1.289-0.897-0.476-0.168-1.121-0.224-1.821-0.056 0.028-0.392 0-0.729 0-0.813 0.028-0.28-0.196-0.56-0.504-0.588-0.028 0-0.056 0-0.056 0-0.28 0-0.504 0.224-0.504 0.504-0.028 0.364 0.028 0.701 0 0.981-0.028 0.14-0.056 0.224-0.112 0.252-0.028 0.028-0.028 0.056-0.056 0.056-0.616 0.168-1.065 0.14-1.429 0.028-0.448-0.14-0.785-0.364-1.065-0.616 0.336-0.701 0.532-1.289 0.897-1.765 0.392-0.56 1.009-1.065 2.41-1.457 0.14-0.028 0.252-0.112 0.364-0.224 0.28-0.336 0.56-0.56 0.813-0.672 0.196-0.084 0.336-0.14 0.588-0.084 0.168 0.364 0.42 0.729 0.616 1.149 0 0.028 0 0.028 0 0.056 0.028 0.168 0 0.224-0.14 0.364s-0.364 0.252-0.56 0.336c-0.28 0.112-0.392 0.42-0.28 0.701s0.42 0.392 0.701 0.28c0.252-0.112 0.616-0.252 0.897-0.56 0.168 0.14 0.364 0.252 0.56 0.28 0.392 0.084 0.729 0.028 0.869 0.028 0.308 0 0.56-0.224 0.56-0.504 0-0.308-0.224-0.532-0.532-0.56-0.028 0-0.028 0-0.056 0-0.252 0-0.476 0.028-0.588 0s-0.14 0-0.224-0.224c-0.196-0.701-0.56-1.261-0.785-1.597 0.56-0.532 0.925-0.616 1.401-0.476 0.196 0.056 0.42 0.028 0.616-0.056 0.953-0.56 1.429-0.42 2.13-0.224-0.028 0.252 0 0.56 0.028 0.925 0.084 0.729 0.252 1.625 0.504 2.438 0.028 0.112 0 0.532-0.224 0.841-0.196 0.308-0.476 0.532-0.925 0.532-0.308-0.028-0.56 0.224-0.56 0.504-0.028 0.308 0.224 0.56 0.504 0.56 0.028 0 0.028 0 0.056 0 0.841 0 1.485-0.476 1.849-1.009 0.28-0.42 0.42-0.841 0.392-1.289 0.168 0.056 0.308 0.084 0.448 0.084 0.308 0.056 0.56-0.168 0.616-0.448s-0.168-0.56-0.448-0.616c-0.196-0.028-0.476-0.112-0.672-0.196s-0.196-0.14-0.196-0.14c0-0.084-0.028-0.14-0.056-0.196-0.084-0.42-0.168-0.869-0.196-1.205-0.028-0.308-0.028-0.532-0.028-0.672 0.028-0.028 0.028-0.056 0.056-0.056 0.672-0.308 1.317-0.476 1.933-0.448 1.037 0.028 2.046 0.504 3.138 1.541 0 0 0 0.028-0.028 0.028-0.112 0.28-0.504 1.037-1.261 1.373-0.28 0.112-0.392 0.448-0.252 0.701 0.112 0.28 0.448 0.392 0.729 0.252 1.149-0.532 1.653-1.597 1.793-1.933 0-0.028 0.028-0.056 0.028-0.084 0.42 0 0.757 0.112 1.093 0.336 0.28 0.196 0.588 0.504 0.841 0.897 0 0-0.028 0.056-0.028 0.056-0.028 0.028-0.028 0.056-0.056 0.084 0 0-0.056 0.14-0.112 0.252-0.028 0.056-0.056 0.14-0.084 0.196-0.084 0.196-0.224 0.392-0.364 0.56-0.168 0.224-0.364 0.364-0.504 0.42s-0.196 0.056-0.392-0.084c-0.252-0.168-0.588-0.112-0.757 0.112-0.168 0.252-0.112 0.588 0.112 0.757 0.448 0.336 1.009 0.392 1.429 0.224 0.168-0.056 0.308-0.168 0.448-0.252 0.112 0.28 0.28 0.56 0.448 0.841 0.14 0.252 0.476 0.336 0.729 0.196s0.336-0.476 0.196-0.729c0-0.028-0.028-0.028-0.028-0.056-0.28-0.42-0.42-0.701-0.448-0.953-0.028-0.224 0.028-0.476 0.224-0.841 1.149 0.252 1.513 0.785 1.681 1.793 0.028 0.224 0.168 0.392 0.336 0.504 0.504 0.308 0.841 0.56 1.009 0.869 0.14 0.252 0.196 0.644 0.028 1.345-0.224 0.14-0.616 0.196-1.037 0.168-0.224-0.028-0.42-0.056-0.588-0.084s-0.308-0.112-0.252-0.084c-0.252-0.168-0.588-0.112-0.757 0.112-0.168 0.252-0.112 0.588 0.112 0.757 0.196 0.14 0.364 0.196 0.616 0.252s0.504 0.112 0.813 0.14c0.336 0.028 0.701 0.028 1.065-0.056 0.336 1.373 0.168 2.186-0.224 2.606z"></path>
+                            <path d="M9.219 10.564c0 0 0 0 0 0-0.392 0.392-1.009 0.841-1.401 0.925-0.196 0.056-0.308 0.028-0.42-0.056s-0.28-0.308-0.42-0.813c-0.056-0.252-0.308-0.42-0.56-0.42-0.28 0.028-0.476 0.252-0.504 0.504-0.028 0.644-0.168 0.841-0.28 0.953s-0.336 0.196-0.673 0.364c-0.336 0.168-0.729 0.42-1.009 0.869-0.168 0.252-0.084 0.588 0.168 0.729s0.588 0.084 0.757-0.168c0 0 0 0 0-0.028 0.14-0.224 0.308-0.336 0.588-0.476 0.224-0.112 0.588-0.224 0.925-0.56 0.084-0.084 0.168-0.168 0.224-0.28 0.056 0.028 0.084 0.084 0.14 0.112 0.392 0.28 0.897 0.336 1.289 0.224 0.813-0.196 1.457-0.785 1.905-1.205 0.224-0.196 0.224-0.532 0.028-0.757-0.196-0.112-0.532-0.112-0.757 0.084z"></path>
+                            <path d="M21.912 11.264c0 0-0.028 0-0.028 0-0.112 0-0.42-0.084-0.616-0.168-0.028 0-0.028 0-0.028 0 0.14-0.392 0.14-0.869-0.084-1.289-0.252-0.476-0.729-0.897-1.457-1.289-0.084-0.056-0.168-0.056-0.252-0.056-0.308 0-0.532 0.224-0.56 0.532 0 0.196 0.112 0.392 0.28 0.476 0.616 0.336 0.897 0.644 1.009 0.841s0.084 0.308 0 0.504c-0.168 0.364-0.785 0.841-1.149 1.065-0.252 0.168-0.308 0.504-0.168 0.729 0.168 0.252 0.504 0.308 0.757 0.168 0 0 0 0 0 0 0.224-0.168 0.644-0.392 0.981-0.757 0.056 0.028 0.112 0.056 0.168 0.084 0.336 0.168 0.701 0.252 1.009 0.252 0.308 0.028 0.56-0.196 0.588-0.476 0.056-0.336-0.168-0.588-0.448-0.616z"></path>
+                            <path d="M17.513 10.060c-0.028 0-0.028 0-0.056 0-0.392-0.084-0.785-0.168-1.093-0.392-0.112-0.084-0.196-0.168-0.28-0.308 0 0 0 0 0 0-0.028-0.056-0.056-0.112-0.084-0.168-0.084-0.224-0.112-0.504-0.112-0.925 0.028-0.308-0.196-0.56-0.504-0.56-0.028 0-0.056 0-0.056 0-0.28 0.028-0.504 0.252-0.504 0.504-0.028 0.56 0.056 1.037 0.224 1.429 0.084 0.392-0.056 0.701-0.28 0.925s-0.504 0.252-0.56 0.224c-0.28-0.112-0.588 0-0.701 0.28s0 0.588 0.28 0.701c0.028 0 0.056 0.028 0.056 0.028 0.616 0.224 1.261-0.028 1.709-0.476 0.168-0.168 0.336-0.392 0.448-0.644 0.476 0.28 0.981 0.336 1.233 0.42 0.28 0.084 0.588-0.084 0.672-0.364 0.056-0.28-0.112-0.588-0.392-0.672z"></path>
+                        </svg>
+                            Cognitive <small>(approx 9.4 million people)</small></h1>
                         <aside class="notes">
                             <p>Cognitive Disabilities Include (but are not limited to):</p>
                             <ul>
@@ -428,6 +430,7 @@
                             <p>When it comes to content and features: KISS - Keep It Short and Simple</p>
                             <p>Clean designs</p>
                             <p>Easy to comprehend content</p>
+
                             <p>Avoid: </p>
                             <p>-content overload</p>
                             <p>-blinking animations (can induce seizures)</p>
@@ -435,39 +438,162 @@
                         </aside>
                     </section>
                 </section>
-
                 <section data-background="images/cat-you.png">
                     <h1 class="why" style="margin-left: -1em;width: 120%;">What about you?</h1>
                     <aside class="notes">
                         <p>Just because you don't fall into one of these classification today, doesn't mean you can't or won't in the future.</p>
                     </aside>
                 </section>
-
                 <section>
-                    <section class="fragment fade-in" data-background="images/broken-hand-2.jpg">
-                        <h1 class="why" style="margin-left: -1em;width: 120%;">Temporarily Disabled</h1>
+                    <section class="fragment fade-in" data-background="images/environmental-issues.png" data-state="bg-contain">
+                        <h1 class="why" style="margin-top: 1em; width: 120%;font-size: 3.4em;margin-left: -1em;">Environmental Conditions</h1>
                         <aside class="notes">
-                            <p>Not accounted for in the census data are things like...</p>
-                            <p>Temporary disabilities, like a broken arm.</p>
-                            <p>---NEXT SLIDE---</p>
+                            <p>Trying to use a device in a loud (like a crowded bus w/o headphones) or outside on a bright/sunny day</p>
                         </aside>
                     </section>
-                    <section class="fragment fade-in" data-background="images/old-lady-cake.jpg">
-                        <h1 class="why" style="margin-top: 3.5em;margin-left: -1em;width: 120%;">Eventually Less-abled</h1>
+                    <section class="fragment fade-in" data-background="images/other-issues.png" data-state="bg-contain">
+                        <h1 class="why" style="margin-left: -1em;width: 120%; margin-top: 3.3em;">Temporarily Disabled</h1>
                         <aside class="notes">
-                            <p>OR getting older</p>
-                            <p>---NEXT SLIDE---</p>
+                            <p>Have you ever:</p>
+                            <ol>
+                                <li>Broken an arm</li>
+                                <li>Had laryngitis or an ear infection</li>
+                                <li>Had cataracts removed</li>
+                            </ol>
                         </aside>
                     </section>
-                    <section class="fragment fade-in" data-background="images/computer-ipad-subway.jpg">
-                        <h1 class="why" style="margin-top: 3.5em;">Environmentally Impaired</h1>
+                    <section class="fragment fade-in" data-background="images/older.png" data-state="bg-contain">
+                        <h1 class="why" style="margin-top: 3em;margin-left: -1em;width: 120%;">Getting Older</h1>
                         <aside class="notes">
-                            <p>Trying to use a computer in a loud or bright area</p>
-                            <p>---NEXT SLIDE---</p>
+                            <p>Getting older</p>
                         </aside>
                     </section>
                 </section>
+                <section data-background="images/why-cat2.jpg">
+                    <h1 class="why" style="margin-left: -1em;width: 120%;">What are the benefits?</h1>
+                    <aside class="notes">
+                        <p>Why should the open source community care about accessibility?</p>
+                        <p>The reasons are the same for everyone because these are important when selecting what tools to use for a project.</p>
+                    </aside>
+                </section>
+                <section>
+                    <h1>Reasons for making things accessible:</h1>
+                    <ol>
+                        <li class="fragment fade-in">Money</li>
+                        <li class="fragment fade-in">Legal</li>
+                        <li class="fragment fade-in">Benefits Everyone</li>
+                        <li class="fragment fade-in">Future Technology</li>
+                        <li class="fragment fade-in">Ethical</li>
+                    </ol>
+                </section>
+                <section>
+                    <section class="fragment fade-in">
+                        <h1>M<svg aria-hidden="true" style="width: 45px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 1em; vertical-align: baseline;position: absolute;left: 548px;top: 41px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="" height="28" viewBox="-6 0 28 28">
+                            <path d="M15.281 18.516q0 2.391-1.555 4.117t-4.039 2.133v2.734q0 0.219-0.141 0.359t-0.359 0.141h-2.109q-0.203 0-0.352-0.148t-0.148-0.352v-2.734q-1.031-0.141-1.992-0.484t-1.586-0.695-1.156-0.75-0.727-0.586-0.273-0.281q-0.266-0.328-0.031-0.641l1.609-2.109q0.109-0.156 0.359-0.187 0.234-0.031 0.375 0.141l0.031 0.031q1.766 1.547 3.797 1.953 0.578 0.125 1.156 0.125 1.266 0 2.227-0.672t0.961-1.906q0-0.438-0.234-0.828t-0.523-0.656-0.914-0.586-1.031-0.5-1.25-0.508q-0.609-0.25-0.961-0.391t-0.961-0.414-0.977-0.484-0.883-0.555-0.836-0.664-0.68-0.766-0.555-0.906-0.328-1.039-0.133-1.219q0-2.156 1.531-3.781t3.984-2.094v-2.812q0-0.203 0.148-0.352t0.352-0.148h2.109q0.219 0 0.359 0.141t0.141 0.359v2.75q0.891 0.094 1.727 0.359t1.359 0.523 0.992 0.586 0.609 0.453 0.234 0.219q0.266 0.281 0.078 0.594l-1.266 2.281q-0.125 0.234-0.359 0.25-0.219 0.047-0.422-0.109-0.047-0.047-0.227-0.187t-0.609-0.414-0.914-0.5-1.164-0.406-1.336-0.18q-1.484 0-2.422 0.672t-0.938 1.734q0 0.406 0.133 0.75t0.461 0.648 0.617 0.516 0.875 0.484 0.945 0.422 1.094 0.43q0.828 0.313 1.266 0.492t1.188 0.547 1.18 0.664 0.969 0.781 0.828 0.992 0.492 1.195 0.203 1.469z"></path>
+                        </svg>oney</h1>
+                        <ol>
+                            <li class="fragment fade-in">Larger potential consumer/user base
+                                <ul>
+                                    <li>Census Data Concludes: Nearly 1 in 5 People Have a Disability in the U.S.</li>
+                                </ul>
+                            </li>
+                            <li class="fragment fade-in">Work With the Government
+                                <ul>
+                                    <li>Businesses must comply with Section 508 when supplying Electronic and Information Technology</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <br>
+                        <aside class="notes">
+                            <p>According to Census Data: Nearly 1 in 5 People Have a Disability in the U.S.</p>
+                            <p>Opening your business up to 20% more of the population doesn't mean you'll make 20% more, but at least you won't be preventing it</p>
+                            <p>Think about how low of a usage % before you are able to stop supporting a browser version ... such as IE8.</p>
+                            <p>Also - Businesses must comply with Section 508 when supplying Electronic and Information Technology <strong>goods and services to the federal government</strong>.  </p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1>
+                            <svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                                <path d="M27.672 24q0 0.828-0.578 1.406l-1.672 1.687q-0.609 0.578-1.422 0.578-0.828 0-1.406-0.578l-5.672-5.688q-0.594-0.562-0.594-1.406 0-0.828 0.672-1.5l-4-4-1.969 1.969q-0.219 0.219-0.531 0.219t-0.531-0.219q0.031 0.031 0.195 0.187t0.195 0.203 0.156 0.18 0.156 0.211 0.094 0.211 0.086 0.258 0.023 0.281q0 0.594-0.438 1.062-0.047 0.047-0.258 0.281t-0.297 0.32-0.289 0.258-0.344 0.242-0.344 0.141-0.406 0.070q-0.625 0-1.062-0.438l-6.375-6.375q-0.438-0.438-0.438-1.062 0-0.203 0.070-0.406t0.141-0.344 0.242-0.344 0.258-0.289 0.32-0.297 0.281-0.258q0.469-0.438 1.062-0.438 0.156 0 0.281 0.023t0.258 0.086 0.211 0.094 0.211 0.156 0.18 0.156 0.203 0.195 0.187 0.195q-0.219-0.219-0.219-0.531t0.219-0.531l5.437-5.437q0.219-0.219 0.531-0.219t0.531 0.219q-0.031-0.031-0.195-0.187t-0.195-0.203-0.156-0.18-0.156-0.211-0.094-0.211-0.086-0.258-0.023-0.281q0-0.594 0.438-1.062 0.047-0.047 0.258-0.281t0.297-0.32 0.289-0.258 0.344-0.242 0.344-0.141 0.406-0.070q0.625 0 1.062 0.438l6.375 6.375q0.438 0.438 0.438 1.062 0 0.203-0.070 0.406t-0.141 0.344-0.242 0.344-0.258 0.289-0.32 0.297-0.281 0.258q-0.469 0.438-1.062 0.438-0.156 0-0.281-0.023t-0.258-0.086-0.211-0.094-0.211-0.156-0.18-0.156-0.203-0.195-0.187-0.195q0.219 0.219 0.219 0.531t-0.219 0.531l-1.969 1.969 4 4q0.672-0.672 1.5-0.672 0.812 0 1.422 0.578l5.672 5.672q0.578 0.609 0.578 1.422z"></path>
+                            </svg>
+                            Legal</h1>
+                        <ol>
+                            <li class="fragment fade-in">Title III of the ADA requires that public and private establishments provide reasonable accommodations to the disabled
+                            <ul> <li class="fragment fade-in">The DOJ has stated that law applies to online entities as well</li></ul>
+                            </li>
+                            <li class="fragment fade-in">Dealing with legal cases can harm brand/identity and be very costly</li>
+                        </ol>
+                        <small style="margin-top: 1em;" class="fragment fade-in"><a href="http://www.karlgroves.com/2011/12/08/reduction-of-legal-risk-as-accessibility-business-case/" target="_blank">Reduction of Legal Risk as Web Accessibility Business Case</a> and <a href="http://www.karlgroves.com/2011/11/15/list-of-web-accessibility-related-litigation-and-settlements/" target="_blank">List of Lawsuits</a></small>
+                        <aside class="notes">
+                            <p>Title III of the ADA requires that public and private establishments provide reasonable accommodations to the disabled and the DOJ has stated that law applies online as well.</p>
+                            <p>So - You can save money by preventing loss due to legal fees, settlement costs, and harm to brand/identity</p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="28" viewBox="0 0 30 28">
+                            <path d="M9.266 14q-2.531 0.078-4.141 2h-2.094q-1.281 0-2.156-0.633t-0.875-1.852q0-5.516 1.937-5.516 0.094 0 0.68 0.328t1.523 0.664 1.859 0.336q1.047 0 2.078-0.359-0.078 0.578-0.078 1.031 0 2.172 1.266 4zM26 23.953q0 1.875-1.141 2.961t-3.031 1.086h-13.656q-1.891 0-3.031-1.086t-1.141-2.961q0-0.828 0.055-1.617t0.219-1.703 0.414-1.695 0.672-1.523 0.969-1.266 1.336-0.836 1.742-0.313q0.156 0 0.672 0.336t1.141 0.75 1.672 0.75 2.109 0.336 2.109-0.336 1.672-0.75 1.141-0.75 0.672-0.336q0.953 0 1.742 0.313t1.336 0.836 0.969 1.266 0.672 1.523 0.414 1.695 0.219 1.703 0.055 1.617zM10 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828zM21 10q0 2.484-1.758 4.242t-4.242 1.758-4.242-1.758-1.758-4.242 1.758-4.242 4.242-1.758 4.242 1.758 1.758 4.242zM30 13.516q0 1.219-0.875 1.852t-2.156 0.633h-2.094q-1.609-1.922-4.141-2 1.266-1.828 1.266-4 0-0.453-0.078-1.031 1.031 0.359 2.078 0.359 0.922 0 1.859-0.336t1.523-0.664 0.68-0.328q1.937 0 1.937 5.516zM28 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828z"></path>
+                        </svg>
+                            Benefits Everyone</h1>
+                        <img class="fragment fade-in" src="images/curb-cutouts.png" style="width: 65%;box-shadow: none;">
+                        <small class="fragment fade-in"  style="font-size: .5em; width: 100%;">Image from Microsoft's <a href="https://www.microsoft.com/en-us/design/practice" target="_blank">Inclusive Design Toolkit</a> </small>
+                        <aside class="notes">
+                            <p>How many people do you see using curb cutouts and elevators that are not disabled?</p>
+                            <p>All of these folks are able to benefit from the features added for people labeled with having disabilities.</p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="28" viewBox="0 0 30 28">
+                            <path d="M9.266 14q-2.531 0.078-4.141 2h-2.094q-1.281 0-2.156-0.633t-0.875-1.852q0-5.516 1.937-5.516 0.094 0 0.68 0.328t1.523 0.664 1.859 0.336q1.047 0 2.078-0.359-0.078 0.578-0.078 1.031 0 2.172 1.266 4zM26 23.953q0 1.875-1.141 2.961t-3.031 1.086h-13.656q-1.891 0-3.031-1.086t-1.141-2.961q0-0.828 0.055-1.617t0.219-1.703 0.414-1.695 0.672-1.523 0.969-1.266 1.336-0.836 1.742-0.313q0.156 0 0.672 0.336t1.141 0.75 1.672 0.75 2.109 0.336 2.109-0.336 1.672-0.75 1.141-0.75 0.672-0.336q0.953 0 1.742 0.313t1.336 0.836 0.969 1.266 0.672 1.523 0.414 1.695 0.219 1.703 0.055 1.617zM10 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828zM21 10q0 2.484-1.758 4.242t-4.242 1.758-4.242-1.758-1.758-4.242 1.758-4.242 4.242-1.758 4.242 1.758 1.758 4.242zM30 13.516q0 1.219-0.875 1.852t-2.156 0.633h-2.094q-1.609-1.922-4.141-2 1.266-1.828 1.266-4 0-0.453-0.078-1.031 1.031 0.359 2.078 0.359 0.922 0 1.859-0.336t1.523-0.664 0.68-0.328q1.937 0 1.937 5.516zM28 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828z"></path>
+                        </svg>
+                            Benefits Everyone</h1>
+                        <ol>
+                            <li class="fragment fade-in">Transcripts: People that want to listen to podcasts and read the transcripts for better learning and comprehension</li>
+                            <li class="fragment fade-in">Good contrast levels makes content easier for everyone to read</li>
+                        </ol>
+                        <aside class="notes">
+                            <p>You can retain information better if you read and hear it at the same time.</p>
+                            <p>So - reading the transcript of a podcast while you listen to it </p>
+                            <p>Contrast</p>
+                            <p>Usability</p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="28" viewBox="0 0 26 28">
+                            <path d="M22.5 7q0-0.625-0.438-1.062t-1.062-0.438-1.062 0.438-0.438 1.062 0.438 1.062 1.062 0.438 1.062-0.438 0.438-1.062zM26 2.5q0 3.891-1.18 6.727t-3.961 5.633q-1.266 1.25-3.047 2.75l-0.313 5.922q-0.031 0.25-0.25 0.406l-6 3.5q-0.109 0.063-0.25 0.063-0.187 0-0.359-0.141l-1-1q-0.203-0.219-0.125-0.5l1.328-4.312-4.391-4.391-4.312 1.328q-0.047 0.016-0.141 0.016-0.219 0-0.359-0.141l-1-1q-0.266-0.297-0.078-0.609l3.5-6q0.156-0.219 0.406-0.25l5.922-0.313q1.5-1.781 2.75-3.047 2.938-2.922 5.594-4.031t6.734-1.109q0.219 0 0.375 0.148t0.156 0.352z"></path>
+                        </svg>
+                            Future Technology</h1>
+                        <p><img src="images/zeldman-tweet.png" style="width:80%;"></p>
+                        <aside class="notes">
+                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="28" viewBox="0 0 26 28">
+                            <path d="M22.5 7q0-0.625-0.438-1.062t-1.062-0.438-1.062 0.438-0.438 1.062 0.438 1.062 1.062 0.438 1.062-0.438 0.438-1.062zM26 2.5q0 3.891-1.18 6.727t-3.961 5.633q-1.266 1.25-3.047 2.75l-0.313 5.922q-0.031 0.25-0.25 0.406l-6 3.5q-0.109 0.063-0.25 0.063-0.187 0-0.359-0.141l-1-1q-0.203-0.219-0.125-0.5l1.328-4.312-4.391-4.391-4.312 1.328q-0.047 0.016-0.141 0.016-0.219 0-0.359-0.141l-1-1q-0.266-0.297-0.078-0.609l3.5-6q0.156-0.219 0.406-0.25l5.922-0.313q1.5-1.781 2.75-3.047 2.938-2.922 5.594-4.031t6.734-1.109q0.219 0 0.375 0.148t0.156 0.352z"></path>
+                        </svg>
+                            Future Technology</h1>
+                        <p>
+                            <img src="images/echo.png" style="width:50%;">
+                            <br><a href="https://youtu.be/KkOCeAtKHIc?t=12s" target="_blank">Amazon Echo</a>
+                        </p>
+                        <aside class="notes">
+                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                        </aside>
+                    </section>
+                    <section class="fragment">
+                        <h1><svg aria-hidden="true" style="width: 60px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 5em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <path d="M20 16h4.766q-0.078 0.094-0.156 0.164t-0.141 0.117l-0.047 0.063-9.734 9.375q-0.281 0.281-0.688 0.281t-0.688-0.281l-9.75-9.406q-0.078-0.031-0.328-0.313h5.766q0.344 0 0.617-0.211t0.352-0.539l1.094-4.391 2.969 10.422q0.094 0.313 0.359 0.516t0.609 0.203q0.328 0 0.594-0.203t0.359-0.516l2.281-7.578 0.875 1.75q0.281 0.547 0.891 0.547zM28 9.312q0 2.266-1.609 4.688h-5.766l-1.734-3.453q-0.125-0.266-0.398-0.422t-0.57-0.125q-0.703 0.078-0.875 0.719l-2.016 6.719-3.063-10.719q-0.094-0.313-0.367-0.516t-0.617-0.203-0.609 0.211-0.344 0.539l-1.813 7.25h-6.609q-1.609-2.422-1.609-4.688 0-3.437 1.984-5.375t5.484-1.937q0.969 0 1.977 0.336t1.875 0.906 1.492 1.070 1.188 1.062q0.562-0.562 1.188-1.062t1.492-1.070 1.875-0.906 1.977-0.336q3.5 0 5.484 1.937t1.984 5.375z"></path>
+                        </svg>
+                            Ethical</h1>
+                        <ol>
+                            <li>It's the right thing to do.</li>
 
+                        </ol>
+                        <aside class="notes">
+                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                        </aside>
+                    </section>
+                </section>
                 <section>
                     <section data-background="images/train-phones.jpg">
                         <h1 class="why" style="margin-top: 3.5em;margin-left: -1em;width: 120%;">We Are Addicted</h1>
@@ -491,13 +617,13 @@
                     </section>
                 </section>
                 <section>
-                    <section>
-                        <h1>What if...</h1>
+                    <section data-background="#333">
+                        <h1 class="disclaimer" style="text-align: center; ">What if...</h1>
                     </section>
                     <section>
                         <div>
                             <p>You go to buy the latest/greatest tech gadget, but a blank page is all that loads.</p>
-                            <img src="images/blank-page.png" style="width:75%; margin-bottom: 0px;border: 0px;" />
+                            <img src="images/blank-page.png" style="width:65%; margin-bottom: 0px;border: 0px;" />
                         </div>
                         <aside class="notes">
                             <p>What if you tried going to your favorite site for your favorite online activity.... </p>
@@ -506,16 +632,18 @@
                     </section>
                     <section>
                         <p>...the page is freaking out and filled unrecognizable errors</p>
-                        <img src="images/errors2.png" style="width:50%; margin-bottom: 1em;border: 0px;" />
+                        <img src="images/errors2.png" style="width:40%; margin-bottom: 1em;border: 0px;" />
                         <aside class="notes">
                             <p>Or a ton of unrecognizable error messages...</p>
                             <p>that you couldn't close.</p>
                         </aside>
                     </section>
-                    <section>
-                        <h1>What if... <br> <small>every website you visited was like this?</small></h1>
+                    <section data-background="#333">
+                        <h1 class="disclaimer" style="text-align: center; ">What if...
+                        <br> <small>every website you visited and app you used was like this?</small>
+                        </h1>
                     </section>
-                    <section data-background="images/smash-computer.gif">
+                    <section data-background="images/tableFlip.gif" data-state="bg-contain">
                         <h1 class="why" style="margin-top: -1.5em;width: 120%; margin-left: -1em; font-size: 3em;">When do you give up?</h1>
                         <aside class="notes">
                             <p>What if ... every site you went to was like this?</p>
@@ -526,16 +654,18 @@
                         </aside>
                     </section>
                 </section>
+                <section data-background="#333">
+                    <h1 class="disclaimer" style="text-align: center; ">Giving up <small>is not an option for people with disabilities.</small></h1>
+                </section>
+
                 <section>
-                    <h1>Why <small>are so many users getting broken pages?</small></h1>
+                    <h1> Let's do our part <small> to fix the problem.</small></h1>
                     <aside class="notes">
-                        <p>Why .... in this day and age</p>
-                        <p>are so many users getting broken pages?</p>
                     </aside>
                 </section>
                 <section>
                     <section class="fragment">
-                        <h3>HTML IS accessible by default:</h3>
+                        <h3>History - HTML IS accessible by default:</h3>
                         <a href="https://web.archive.org/web/19961223150621/http://www8.yahoo.com/" target="_blank"><img class="fade-in fragment" src="images/yahoo-1996.png" style="width:60%; float:left;"></a>
                         <ul>
                             <li class="fade-in fragment">text and links</li>
@@ -543,11 +673,29 @@
                             <li class="fade-in fragment">simple forms</li>
                         </ul>
                         <aside class="notes">
-                            <p>The Internet We Have Today Is Broken</p>
-                            <p>But, since HTML2, the it was accessible by default</p>
-                            <p>html2 (1995) had text, links, images with alt text and simple forms</p>
+                            <p>Since HTML2 (1995), the web was accessible by default</p>
+                            <p>just text, links, images with alt text and simple forms</p>
                             <p>This is Yahoo from 1996. It is completely accessible.</p>
                             <p>So - 1995 - completely accessible internet</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>But, Issues We See With Websites Today</h3>
+                        <ul>
+                            <li class="fade-in fragment">Overriding browser defaults (tabindex, outline)</li>
+                            <li class="fade-in fragment">Using poor semantics</li>
+                            <li class="fade-in fragment">Audio/Video (without cations/transcripts)</li>
+                            <li class="fade-in fragment">Javascript (manipulating the dom)</li>
+                        </ul>
+                        <aside class="notes">
+                            <p>Generally speaking, common accessibility mistakes found are:</p>
+                            <ul>
+                                <li>Overriding browser defaults (tabindex, outline)</li>
+                                <li>Implementing Bad semantics</li>
+                                <li>Adding Audio/Video without cations/transcripts</li>
+                                <li>And Javascript added functionality is not accessible without special help ... which I'll talk about later</li>
+                                <li>Not enough contrast for text elements</li>
+                            </ul>
                         </aside>
                     </section>
                     <section class="fragment">
@@ -557,116 +705,54 @@
                             <p>Accessibility is not something we add to a website, but something we start with and risk losing with each enhancement. It is to be retained.</p>
                         </aside>
                     </section>
-                    <section>
-                        <h2>Yahoo Today</h2>
-                        <img src="images/yahoo-present.jpg" style="width: 80%;">
+                    <section class="fragment fade-in">
+                        <a href="https://twitter.com/HugoGiraudel/status/691945278404952064" target="_blank"><img src="images/production-ready.png" style="width:60%;"></a>
                         <aside class="notes">
-                            <p>Looks lovely, but is not very accessible.</p>
+                            <p>...</p>
                         </aside>
                     </section>
-                    <section>
-                        <h3>Issues We See Today</h3>
-                        <img src="images/yahoo-2015.png" style="width: 60%; float:left;">
-                        <ul style="width:35%; float: right;">
-                            <li class="fade-in fragment">Overriding browser defaults (tabindex, outline)</li>
-                            <li class="fade-in fragment">Using poor semantics</li>
-                            <li class="fade-in fragment">Audio/Video (without cations/transcripts)</li>
-                            <li class="fade-in fragment">Javascript (manipulating the dom)</li>
-                        </ul>
+                    <section class="fragment fade-in">
+                        <a href="https://twitter.com/artem_tabalin/status/731146816943689728" target="_blank"><img src="images/production-ready-response.png" style="width:60%;"></a>
                         <aside class="notes">
-                            <p>Here's yahoo today ... Yikes... I'm not picking on Yahoo, I wanted a site that I could compare with back in 1995-ish era</p>
-                            <p>Today, We're</p>
-                            <ul>
-                                <li>Overriding browser defaults (tabindex, outline</li>
-                                <li>Implementing Bad semantics</li>
-                                <li>Adding Audio/Video without cations/transcripts</li>
-                                <li>And Javascript added functionality is not accessible without special help ... which I'll talk about later</li>
-                            </ul>
+                            <p>...</p>
                         </aside>
                     </section>
-                    <section>
-                        <a href="https://twitter.com/HugoGiraudel/status/691945278404952064" target="_blank"><img src="images/production-ready.png" style="width:70%;"></a>
-                        <aside class="notes">
-                            <p>The web we have today ... accessibility is seen as a feature.</p>
-                        </aside>
-                    </section>
-                    <section data-background="images/bad-foundation-house.jpg">
-                        <h1 class="why">Accessibility <small>is NOT a feature, it's part of the foundation.</small></h1>
+                    <section data-background="images/Foundation.jpg">
+                        <h1 class="why" style="width: 115%;left: -1em;">Accessibility <small>is NOT a feature, <br/> it's part of the foundation.</small></h1>
                         <aside class="notes">
                             <p>Accessibility is NOT a feature, it's part of the foundation.</p>
-                            <p>If your site does not have a solid foundation, it's in trouble.</p>
+                            <p>Think about building a house without a foundation....</p>
+                            <p>...would you just shrug it off and say you'll add it later?</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/leaning_tower.jpg">
+                        <h1 class="why" style="width: 115%;left: -1em;">When you think you'll add accessibility later.</h1>
+                        <aside class="notes">
                         </aside>
                     </section>
                 </section>
-                <section data-background="images/what-is-accessibility22.jpg">
-                    <section class="fragment fade-in">
-                        <h2>Accessibility needs to be a:</h2>
-                        <ul style="font-weight: 700; width: 60%;">
-                            <li class="fragment fade-in">business requirement</li>
-                            <li class="fragment fade-in">part of planning meetings</li>
-                            <li class="fragment fade-in">design requirement (personas)</li>
-                            <li class="fragment fade-in">development requirement (code standards and special features)</li>
-                            <li class="fragment fade-in">QA item</li>
-                        </ul>
-                        <aside class="notes">
-                            <p>---read list---</p>
-                        </aside>
-                    </section>
-                    <section class="fragment fade-in">
-                        <h2>Accessibility should not be an afterthought.</h2>
-                        <img src="images/no-access.jpg" style="width:50%;">
-                        <aside class="notes">
-                            <p>It's really uncomfortable when you launch a new site and list all of the awesome features it has...</p>
-                            <p>Only to be told that it is completely inaccessible.</p>
-                            <p>Or even worse... sued for it being inaccessible.</p>
-                            <p>Don't let that be you.</p>
-                        </aside>
-                    </section>
+                <section data-background="#333">
+                    <h1 class="disclaimer" style="text-align: center; ">Getting Started</h1>
                 </section>
                 <section>
-                    <section class="fragment fade-in">
-                        <h2>Mobile-First & RWD</h2>
-                        <img src="images/rwd-mobile-first.png" style="width: 55%;">
-                        <br>
-                        <small>image stolen from the internets <a href="http://metamonks.com/mobile-first-vs-responsive/" target="_blank">metamonks.com</a></small>
-                        <aside class="notes">
-                            <p>changing our mindset</p>
-                            <p>we did it before with rwd and mobile first</p>
-                        </aside>
-                    </section>
-                    <section class="fragment fade-in">
-                        <h2>Accessible Web Design (AWD) OR Accessible-First</h2>
-                        <img src="images/awd.png" style="width: 55%">
-
-                        <aside class="notes">
-                            <p>We can do it again! Accessible Web Design (AWD) OR Accessibility First</p>
-                            <p>Let's ensure that people with disabilities can easily access the web.</p>
-                        </aside>
-                    </section>
-                    <section data-background="images/stair-ramp.jpg">
-                        <h1 class="why" style="float: left;">Inclusive/Universal Design</h1>
-                        <div>
-<!--                            <img src="images/stair-ramp.jpg" style="width:50%; border: 0px;">-->
-                        </div>
-                        <aside class="notes">
-                            <p>Ramp up the stairs</p>
-                        </aside>
-                    </section>
+                    <h1>Accessibility is not <small>a specialist position.</small></h1>
+                    <p>One person cannot make and maintain an accessible product alone.</p>
                 </section>
-                <!--<section>-->
-                    <!--<h1>Business</h1>-->
-                <!--</section>-->
-                <!--<section>-->
-                    <!--<h1>Design</h1>-->
-                <!--</section>-->
-                <!--<section>-->
-                    <!--<h1>Development</h1>-->
-                <!--</section>-->
-                <!--<section>-->
-                    <!--<h1>QA</h1>-->
-                <!--</section>-->
                 <section>
-                    <h1>Getting Started</h1>
+                    <h1>Accessibility <small>needs to be a</small> product goal.</h1>
+                    <p style="font-weight: bold;">So it's incorporated into the process:</p>
+                    <ol>
+                        <li class="fragment fade-in">Content Strategy</li>
+                        <li class="fragment fade-in">UX/Design</li>
+                        <li class="fragment fade-in">Development</li>
+                        <li class="fragment fade-in">QA Test</li>
+                        <!--<li class="fragment fade-in">Customer Service Support</li>-->
+                    </ol>
+                    <aside class="notes">
+                        <p>Let's look at this from the who does what approach.</p>
+                        <p>In order for anything to be successful, it needs to be a part of the product goals.</p>
+                        <p>Supported from end to end, starting with the product owner/ceo (person in charge) and ending with consumer touch point.</p>
+                    </aside>
                 </section>
                 <section>
                     <h2>Think "POUR"</h2>
@@ -685,27 +771,347 @@
                             <span class="callout-letter">R</span>obust - works across many devices
                         </p>
                     </div>
-                </section>
-                <section>
-                    <h2>ARIA provides a set of attributes <small>that you can add to HTML elements.</small></h2>
-                    <img src="images/aria-html5.png" alt=" " style="width:25%;margin-left: 20%; float: left;">
-                    <div>
-                        <ul>
-                            <li>role</li>
-                            <li>state</li>
-                            <li>property</li>
-                        </ul>
-                    </div>
                     <aside class="notes">
-                        <p>ARIA - Accessible Rich Internet Applications -  </p>
-                        <p>This standard allows developers to set roles, states and properties on html elements </p>
-                        <p>defines methods to make Web content and Web applications more accessible to people using assistive technology</p>
+                        <p> Something everyone should know... </p>
+                        <p> The four main guiding principles of accessibility are ... [and read list]</p>
                     </aside>
                 </section>
                 <section>
+                    <section data-background="images/content-strategy.jpg">
+                        <h1 class="why" style="width: 115%;left: -1em;">1. Content Strategy<br><small class="image-credit-top">Image from http://www.infrontoftheline.com/blog/content.html</small></h1>
+                        <aside class="notes">
+                            <p>Content is King</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h1>Content Strategy Considerations:</h1>
+                        <ol>
+                            <li class="fragment fade-in">Readability: Comprehension</li>
+                            <li class="fragment fade-in">Alternative Text for Graphics</li>
+                            <!--<li>Hyperlink Text</li>-->
+                            <li class="fragment fade-in">Closed Captioning</li>
+                            <li class="fragment fade-in">Transcripts</li>
+                        </ol>
+                        <aside class="notes">
+                            <p>...</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/readability-tests.png">
+                        <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">
+                            1. Readability: Comprehension
+                            <small class="image-credit-top">Image from: http://uxmastery.com/readability-tests-magic-formula-or-recipe-for-disaster/</small>
+                        </h2>
+                        <aside class="notes">
+                            <p>Easy To Read and Understand Content so that people with learning disabilities can consume the content. </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Testing</h3>
+                        <a href="http://www.hemingwayapp.com/" target="_blank"><img src="images/hemingway-app.png" style="width: 70%;"></a>
+                        <aside class="notes">
+                            <p>Use the hemingway app to test the site's written content</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/cat-alt-hard.jpg">
+                        <h2 class="why" style="width: 115%;margin-left: -1em;top: -4em;">2. Meaningful Alternative Text</h2>
+                        <aside class="notes">
+                            <ul>
+                                <li>Adding alt text to images is one of the easiest accessibility
+                                    principles to implement, but I find it one of the hardest to do well.</li>
+                                <li>Alternative text <em>should</em> present the CONTENT and FUNCTION of the image, short and sweet.</li>
+                                <li>Link, ect</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/alt-text-all.png" style="width:60%;" />
+                        <aside class="notes">
+                            <ul>
+                                <li>Every image must have an <code>alt</code> attribute in order to be w3c compliant.</li>
+                                <li>But - do all alt attributes need to have text?</li>
+                                <li>The answer is NO.</li>
+                                <li>Decorative images (for layout: spacers, dividers) should have null alt text (alt="").</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/alt-text-empty.png" style="width:100%;" />
+                        <aside class="notes">
+                            <ul>
+                                <li>When we talk about alternative text, it can be either in the <code>alt</code> attribute OR in the surrounding context of the image.</li>
+                                <li>Alternative text <em>should not</em>:
+                                    <ul>
+                                        <li>be redundant (be the same as adjacent or body text).</li>
+                                        <li>use the phrases "image of…" or "graphic of…" or "...logo".</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Figure and Figcaption</h3>
+                        <figure>
+                            <img src="images/cat-cactus.jpg" style="float: left; width: 45%" alt="Cat trying to take a bite out of a cactus plant.">
+                            <figcaption style="font-size: .85em;float: left; width: 45%; margin-left: 5%; text-align: left;margin-top: 1em;">Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
+                        </figure>
+                        <div style="clear: both;"></div>
+<pre>
+<code>
+    <figure>
+        <img src="images/cat-cactus.jpg" alt="Cat trying to take a bite out of a cactus plant.">
+        <figcaption>Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
+    </figure>
+</code>
+</pre>
+                        <aside class="notes">
+                            <p>When appropriate, you can use newish html5 elements figure and figcaption.</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/cc.png">
+                        <h2 class="why">3. Closed Captions</h2>
+                    </section>
+                    <section>
+                        <h2>Simple. Do it.</h2>
+                        <p><a href="https://www.theguardian.com/technology/video/2014/sep/10/apple-iphone-6-watch-analysts-video" target="_blank"><img src="images/no-transcript.png" style="width:60%;" /></a></p>
+                    </section>
+                    <section>
+                        <h2>But, DON'T do it with YouTube.</h2>
+                        <a href="http://www.youtube.com/watch?v=ru6wri23Ljk" target="_blank"><img src="images/youtube.png" style="width:50%;" /></a>
+                    </section>
+                    <section>
+                        <h2>Because it's awful!</h2>
+                        <a href="https://youtu.be/gI5ibuJUsZI" target="_blank"><img src="images/youtube2.jpg" style="width:60%;" /></a>
+                    </section>
+                    <section>
+                        <h2>Unless ... <small>they are edited</small></h2>
+                        <a href="https://support.google.com/youtube/answer/6054623?hl=en" target="_blank"><img src="images/youtube-contrib.png" style="width:40%;" /></a>
+                    </section>
+                    <section data-background="images/transcribe.jpg">
+                        <h2 class="why">4. Transcripts</h2>
+                    </section>
+                    <section>
+                        <h2>Do it with style.</h2>
+                        <a href="http://responsivewebdesign.com/podcast/moosejaw/#episode-transcript" target="_blank"><img src="images/transcripts.png" style="width:70%;" /></a>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background="images/stair-ramp.jpg">
+                        <h1 class="why" style="width: 115%;left: -1em;">2. UX/Design</h1>
+                        <aside class="notes">
+                            <p>Accessible designs DO NOT have to look plain and boring!!!</p>
+                            <p>They can be beautiful and interesting, but the constraint has to be factored in.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Not Plain</h2>
+                        <a href="http://bronxzoo.com/" target="_blank"><img src="images/bronx-zoo.png" style="width: 65%;"></a>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Not Boring</h2>
+                        <a href="http://www.voxmedia.com/pages/recode"><img src="images/vox-media.png" style="width: 65%;"></a>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h1>Design Considerations:</h1>
+                        <ol>
+                            <li class="fragment fade-in">Personas</li>
+                            <li class="fragment fade-in">Contrast</li>
+                            <li class="fragment fade-in">Color</li>
+                            <li class="fragment fade-in">Readability: Fonts and Text</li>
+                            <li class="fragment fade-in">The Focus Outline</li>
+                            <li class="fragment fade-in"quic>Animation</li>
+                        </ol>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h2 style="float: left">1. Personas</h2>
+                        <small style="float: left; clear: both;">Persona from <a href="https://uxmag.com/articles/book-excerpt-a-web-for-everyone" target="_blank">Book Excerpt: A Web for Everyone</a> </small>
+                        <img src="images/persona-1.png" style="width: 35%;">
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Update personas to include 3 A's:</h2>
+                        <img src="images/persona-1.png" style="width: 24.8%;"><img src="images/persona-2.png" style="width: 50%;">
+                        <small style="width:100%;">Persona from <a href="https://uxmag.com/articles/book-excerpt-a-web-for-everyone" target="_blank">Book Excerpt: A Web for Everyone</a> </small>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h1>2. Contrast</h1>
+                        <h2>The difference in color and light between parts of an image. -wikipedia </h2>
+                    </section>
+                    <section>
+                        <h2>How can we check this?</h2>
+                        <a href="http://leaverou.github.io/contrast-ratio/#black-on-%23efefef" target="_blank"><img src="images/contrast-new-bg.png" style="width:60%;" /></a>
+                        <small style="width: 100%">By Lea Verou</small>
+                        <aside class="notes">
+                            <p>if you are in the design process</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>How can we check this in sketch?</h2>
+                        <a href="https://github.com/getflourish/Sketch-Color-Contrast-Analyser" target="_blank"><img src="images/color-contrast-sketch.png" style="width:50%;" /></a>
+                        <small style="width: 100%">By getflourish</small>
+                        <aside class="notes">
+                            <p>if you are in the design process</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>How can we check this on a live site?</h2>
+                        <a href="videos/contrast.m4v" target="_blank"><img src="images/contrast-check.png" style="width:70%;" /></a>
+                        <aside class="notes">
+                            <p>use aXe plugin and chrome accessibility tools</p>
+                            <p>Use the nocoffee plugin to test the blur and other filters</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/classification.jpg">
+                        <h1 style="color: white;">3. Color</h1>
+                        <aside class="notes">
+                            <p>The key principle of web accessibility for users with color-blindness is:
+                                <br>Perceivable: because they cannot see the difference between certain color combinations</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Meaningful Without Color</h2>
+                        <p>Bad: Error Messaging Relies on Color</p>
+                        <p><img src="images/color-blind/bootstrap-alert-messages.png" style="width:50%;" class="gray-filter" /></p>
+                        <aside class="notes">
+                            <p>Meaningful Without Color</p>
+                            <p>here, we have an example of a not-so-good error messaging system because it's not the easiest to understand without color.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Meaningful Without Color</h2>
+                        <p>Better: Message Conveyed With Icons</p>
+                        <p><img src="images/color-blind/alert_messages_icons.jpg" style="width:40%;" class="gray-filter" /></p>
+                        <aside class="notes">
+                            <p>This is a better example with icons.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Testing</h2>
+                        <a href="videos/color-blindness.m4v" target="_blank"><img src="images/maps.png" style="width: 60%"></a>
+                        <aside class="notes">
+                            <p>Using the Chrome Plugin, NoCoffee, you can easily change settings to see the page in different hues.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Good Example: Provide Options</h2>
+                        <a href="videos/color-blindness-option.m4v" target="_blank"><img src="images/color-blind.png" style="width: 50%"></a>
+                        <aside class="notes">
+                            <p>This example provides an option for colorblind which swaps out the green for blue.</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/readability-tests.png">
+                        <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">
+                            4. Readability: Fonts and Text
+                            <small class="image-credit-top">Image from: http://uxmastery.com/readability-tests-magic-formula-or-recipe-for-disaster/</small>
+                        </h2>
+                    </section>
+                    <section>
+                        <h3>Readability: Easy To Read and Understand Content</h3>
+                        <img src="images/text-rivereffect.png" style="width: 30%; margin-right:10%; float: left;">
+                        <div style="width: 50%; float: left;">
+                            <ul>
+                                <li class="fragment fade-in">Make sure the text is large enough and has proper contrast.</li>
+                                <li class="fragment fade-in">Choose easy to read fonts.</li>
+                                <li class="fragment fade-in">Left align the text. It's easier to read.</li>
+                                <li class="fragment fade-in">Avoid all caps</li>
+                                <li class="fragment fade-in">Avoid large chunks of italicized text</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>5. The :focus Outline</h2>
+                        <p>
+                            <a href="videos/outline.m4v" target="_blank"><img class="fragment fade-in" src="images/outline.png" style="width:60%;" /></a>
+                        </p>
+                        <aside class="notes">
+                            <p>Do NOT remove the default :focus { outline: none; outline: 0; }! Update the css if you do not like how it looks, but do not remove it! It is imperative for ppl that nav via keyboard to see what the focus is on.</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/disney-animation.jpg">
+                        <h2 class="why" style="margin-top: 2em;width: 113%;  margin-left: -1em;">6.  Animation</h2>
+                    </section>
+                    <section>
+                        <h3>Things to avoid:</h3>
+                        <a href="http://alistapart.com/d/428/rd-contstruction.mp4" target="_blank" style="width: 50%; float: left; margin-right: 10px;"><img src="images/animation.png"></a>
+                        <div style="width: 45%; float: left;">
+                            <ul>
+                                <li class="fragment fade-in">Large areas of motion and the <strong>parallax</strong>-like effects of background and foreground moving at different speeds</li>
+                                <li class="fragment fade-in"><strong>Autoplaying carousels</strong> without controls to pause or stop it</li>
+                                <li class="fragment fade-in"><strong>Scrolljacking</strong> - background animates at a different speed than your scrolling effort</li>
+                            </ul>
+                        </div>
+                        <small style="margin-top: 20px">Check out: <a href="http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity">Designing Safer Web Animation For Motion Sensitivity</a> by Val Head</small>
+                        <aside class="notes">
+                            <p>Moving content can also be a annoying and distracting for some people.</p>
+                            <p>For people with ADD, it makes it difficult for them to concentrate on other parts of the Web page.</p>
+                            <p>But - for others it can trigger dizziness, nausea, migraines AND even seizures (epilepsy)</p>
+                            <p>If you want to use these types of features, provide a way for users to turn them off easily.</p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="images/audit-the-site.gif">
+                        <h1 class="why" style="width: 115%;left: -1em;top:1em;">3. Development</h1>
+                        <aside class="notes">
+                            <p></p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h1>Development Considerations:</h1>
+                        <ol>
+                            <li class="fragment fade-in">Aria</li>
+                            <li class="fragment fade-in">Valid HTML</li>
+                            <li class="fragment fade-in">Semantic HTML</li>
+                            <li class="fragment fade-in">Focus Management (aka - Keyboard Accessibility)</li>
+                            <li class="fragment fade-in">Canvas</li>
+                            <li class="fragment fade-in">SVG</li>
+                            <li class="fragment fade-in">Forms</li>
+                        </ol>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>1. ARIA</h2>
+                        <img src="images/aria-html5.png" alt=" " style="width:25%;">
+                        <aside class="notes">
+                            <p>ARIA - Accessible Rich Internet Applications -  </p>
+                            <p>This standard allows developers to set roles, states and properties on html elements </p>
+                            <p>defines methods to make Web content and Web applications more accessible to people using assistive technology</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>ARIA: provides a set of attributes that you can add to HTML elements.</h2>
+                        <div>
+                            <ul>
+                                <li class="fragment fade-in">role</li>
+                                <li class="fragment fade-in">state</li>
+                                <li class="fragment fade-in">property</li>
+                            </ul>
+                        </div>
+                        <aside class="notes">
+                            <p>ARIA - Accessible Rich Internet Applications -  </p>
+                            <p>This standard allows developers to set roles, states and properties on html elements </p>
+                            <p>defines methods to make Web content and Web applications more accessible to people using assistive technology</p>
+                        </aside>
+                    </section>
                     <section class="fragment fade-in">
                         <h3>First rule of ARIA use</h3>
-                        <img class="fragment fade-in" src="images/first-rule-of-aria-2.png" style="width: 50%;">
+                        <img class="fragment fade-in" src="images/first-rule-of-aria-2.png" style="width: 40%;">
                     </section>
                     <section class="fragment fade-in">
                         <h3>First rule of ARIA use: Don't use it!</h3>
@@ -715,8 +1121,7 @@
                         </aside>
                     </section>
                     <section class="fragment fade-in" data-background="images/belt-braces.png">
-                        <h2 class="why" style="width: 111%;margin-left: -.8em;padding: 1em 20px !important;">"ARIA roles add nothing to default semantics of most elements" - Steve Faulkner</h2>
-                        <small style="margin-top: 6em;">from <a href="http://html5doctor.com/on-html-belts-and-aria-braces/">On HTML belts and ARIA braces (The Default Implicit ARIA semantics they didn’t want you to know about)</a></small>
+                        <h2 class="why" style="width: 110%;margin-left: -.8em;padding: 1em 20px !important;">"ARIA roles add nothing to default semantics of most elements" - Steve Faulkner <small>(<a href="http://html5doctor.com/on-html-belts-and-aria-braces/">source</a>)</small></h2>
                     </section>
                     <section style="text-align: left;">
                         <h3>Don't add default implicit roles to elements</h3>
@@ -766,23 +1171,9 @@
                             <p>Now that we understand ARIA, let's start auditing!</p>
                         </aside>
                     </section>
-                </section>
-                <section data-background="images/site-audit.jpg">
-                    <aside class="notes">
-                        <p>Now that we know what ARIA is ... let's start auditing!</p>
-                    </aside>
-                </section>
-                <section>
-                    <h2>Step 1. Audit For Bots</h2>
-                    <img src="images/audit-the-site.gif" style="width:55%;">
-                    <aside class="notes">
-                        <p>First things, first. Make the site robot readable. Screen readers are bots ...</p>
-                    </aside>
-                </section>
-                <section>
-                    <h2>W3C Validation</h2>
                     <section>
-                        <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fwww.cnn.com" target="_blank"><img src="images/cnn.png" style="width:80%;" ></a>
+                        <h2>2. W3C Validation</h2>
+                        <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fwww.cnn.com" target="_blank"><img src="images/cnn.png" style="width:70%;" ></a>
                         <br><small>Note -  <a href="https://www.paciellogroup.com/blog/2015/08/short-note-on-html-conformance-checking/" target="_blank">conformance checking</a></small>
                         <aside class="notes">
                             <p> We test using the w3c validator.</p>
@@ -790,6 +1181,7 @@
                         </aside>
                     </section>
                     <section>
+                        <h2>W3C Validation</h2>
                         <img src="images/cnn-w3c-check.png" style="width: 60%">
                         <br>
                         <small><a href="https://www.paciellogroup.com/blog/2015/08/short-note-on-html-conformance-checking/" target="_blank">Notes on conformance checking</a></small>
@@ -799,53 +1191,48 @@
                             <p>Warnings - are more of you may or may not need to fix -> more of a recommendation</p>
                         </aside>
                     </section>
-                </section>
-                <section>
-                    <h2>Semantic HTML</h2>
-                    <ul>
-                        <li class="fragment fade-in">Headings
-                            <ul>
-                                <li class="fragment fade-in">are meant to help users understand content hierarchy</li>
-                                <li class="fragment fade-in">are <strong>not</strong> meant for visual styling</li>
-                                <li class="fragment fade-in">levels should not be skipped (BAD - h1, h2, h4)</li>
-                            </ul>
-                            <aside class="notes">
-                                <p>When you validate your site via W3C, you'll catch embarrassing errors like unsemantic html</p>
-                                <ol>
-                                    <li>Heading tags are for content hierarchy (outline), not for styling</li>
-                                    <li>If you want an h3 to look like an h4, style it with CSS, but don't skip heading levels.</li>
-                                </ol>
-                                <ol>
-                                    <li>If you don’t like how a button or link looks, style it with CSS.</li>
-                                    <li>If it navigates, it is a link. Use link markup with a valid hypertext reference</li>
-                                    <li>If it triggers an action, it is a button. Use a <code>BUTTON</code> element</li>
-                                    <li><code>DIV</code>s and <code>SPAN</code>s are not buttons</li>
-                                    <li>and are not natively supported to have keyboard focus, name, role, or value ... why use them and have to add all of this support via more code?</li>
-                                </ol>
-                            </aside>
-                        </li>
-                        <li class="fragment fade-in" style="margin-top: 1em;">Links, Buttons, Divs and Spans
-                            <ul>
-                                <li class="fragment fade-in">Links - are being styled like buttons, which is fine. Just don't mark them up as buttons.</li>
-                                <li class="fragment fade-in">a, div and span ARE NOT buttons
-                                    <br>BAD! <pre><code><a href="#" onmouseover="dropdownmenu()">Products</a></code></pre>
-                                </li>
-                                <li class="fragment fade-in">if it acts like a button, make it a
-                                    <br>Good: <pre><code><button onmouseover="dropdownmenu()" class="btn-primary">button</button></code></pre>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section data-background="images/cat-mouse.jpg">
-                    <h2 class="why" style="width: 115%;margin-left: -1em;top: -5em;">Step 2. Keyboard Accessibility</h2>
-                </section>
-                <section>
                     <section>
-                        <h3>Does it: Highlight what it's on?</h3>
-                         <p>
-                             <a href="video/tabbing.mov" target="_blank"><img class="fragment fade-in" src="images/tab-focus.png" style="width:80%;" /></a>
-                         </p>
+                        <h2>3. Semantic HTML</h2>
+                        <ul>
+                            <li class="fragment fade-in">Headings
+                                <ul>
+                                    <li class="fragment fade-in">are meant to help users understand content hierarchy</li>
+                                    <li class="fragment fade-in">levels should not be skipped (BAD - h1, h2, h4)</li>
+                                </ul>
+                            </li>
+                            <li class="fragment fade-in" style="margin-top: 1em;">Links, Buttons, Divs and Spans
+                                <ul>
+                                    <li class="fragment fade-in">Links - are being styled like buttons, which is fine. Just don't mark them up as buttons.</li>
+                                    <li class="fragment fade-in">a, div and span ARE NOT buttons <pre><code><a href="#" onmouseover="dropdownmenu()">Products</a></code></pre>
+                                    </li>
+                                    <li class="fragment fade-in">if it acts like a button, make it a <pre><code><button onmouseover="dropdownmenu()" class="btn-primary">button</button></code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <aside class="notes">
+                            <p>When you validate your site via W3C, you'll catch embarrassing errors like unsemantic html</p>
+                            <ol>
+                                <li>Heading tags are for content hierarchy (outline), not for styling</li>
+                                <li>If you want an h3 to look like an h4, style it with CSS, but don't skip heading levels.</li>
+                            </ol>
+                            <ol>
+                                <li>If you don’t like how a button or link looks, style it with CSS.</li>
+                                <li>If it navigates, it is a link. Use link markup with a valid hypertext reference</li>
+                                <li>If it triggers an action, it is a button. Use a <code>BUTTON</code> element</li>
+                                <li><code>DIV</code>s and <code>SPAN</code>s are not buttons</li>
+                                <li>and are not natively supported to have keyboard focus, name, role, or value ... why use them and have to add all of this support via more code?</li>
+                            </ol>
+                        </aside>
+                    </section>
+                    <section data-background="images/cat-keyboard-tandy.jpg">
+                        <h2 class="why" style="width: 115%;margin-left: -1em;top: -4em;">4. Focus Management <br/>(aka - Keyboard Accessibility)</h2>
+                    </section>
+                    <section>
+                        <h3>Tabbing. Does it: Highlight what it's on?</h3>
+                        <p>
+                            <a href="videos/tabbing.m4v" target="_blank"><img class="fragment fade-in" src="images/tab-focus.png" style="width:80%;" /></a>
+                        </p>
                         <aside class="notes">
                             <p>Do NOT remove the default :focus { outline: none; outline: 0; }! Update the css if you do not like how it looks, but do not remove it! It is imperative for ppl that nav via keyboard to see what the focus is on.</p>
                         </aside>
@@ -859,7 +1246,7 @@
                     </section>
                     <section>
                         <h3>Do you have to go through the main nav?</h3>
-                        <img src="images/no-skip-nav.png" style="width:80%;" />
+                        <img src="images/no-skip-nav.png" style="width:70%;" />
                         <aside class="notes">
                             <p>Add a skip nav (and make sure it works!) -- add tabindex=-1 to elements you want to be focusable, but not in the normal tab order</p>
                         </aside>
@@ -873,264 +1260,132 @@
                     </section>
                     <section>
                         <h2>Provide skip to page sections</h2>
-                        <img src="images/skip-content.png" style="width:80%;" />
+                        <img src="images/skip-content.png" style="width:70%;" />
 
                         <aside class="notes">
                             <p>Add other skips or simply set a negative tabindex for elements that are redundant</p>
                         </aside>
                     </section>
-                </section>
-                <section data-background="images/classification.jpg">
-                    <h1 style="color: white;">Step 3. Contrast & Color</h1>
-                </section>
-                <section>
-                    <section>  
-                        <h2>Contrast<small>The difference in color and light between parts of an image. -wikipedia </small></h2>
-                        <p><img src="images/color-contrast.gif" style="width:40%;" /></p>
-                        <small>Image from: <a href="http://www.howdesign.com/parse/destroy-designers-block-with-contrast" target="_blank"/>howdesign.com</a></small></p>
-                    </section>
-                    <section>  
-                        <h2>How can we check this?</h2>
-                        <a href="http://giftcards.com" target="_blank"><img src="images/contrast-check.png" style="width:80%;" /></a>
-                        <aside class="notes">
-                            <p>use aXe plugin and chrome accessibility tools</p>
-                            <p>Use the nocoffee plugin to test the blur and other filters</p>
-                        </aside>
-                    </section>
-                    <!--<section>-->
-                        <!--<h3>Testing</h3>-->
-                        <!--<img src="images/no-coffee-blur.png" style="width: 100%;">-->
-                        <!--<aside class="notes">-->
-                            <!--<p>Use the nocoffee plugin to test the blur and other filters</p>-->
-                        <!--</aside>-->
-                    <!--</section>-->
-                </section>
-                <section>
                     <section>
-                        <h2>Meaningful Without Color</h2>
-                        <p>Bad: Error Messaging Relies on Color</p>
-                        <p><img src="images/color-blind/bootstrap-alert-messages.png" style="width:80%;" /></p>
-                    </section>
-                    <section>
-                        <h2>Meaningful Without Color</h2>
-                        <p>Better: Message Conveyed With Icons</p>
-                        <p><img src="images/color-blind/alert_messages_icons.jpg" style="width:50%;" /></p>
-                    </section>
-                    <section>
-                        <h2>Testing</h2>
-                        <a href="https://www.google.com/maps/" target="_blank"><img src="images/maps.png" style="width: 80%"></a>
-                        <aside class="notes">
-                            <p>Using the Chrome Plugin, NoCoffee, you can easily change settings to see the page in different hues.</p>
-                        </aside>
-                    </section>
-                </section>
-                <section data-background="images/cc.png">
-                    <h2 class="why">Step 4. Transcription & Closed Caption</h2>
-                </section>
-                <section>
-                    <section>
-                        <h2>Simple. Do it.</h2>
-                        <p><img src="images/no-transcript.png" style="width:60%;" /></p>
-                    </section>
-                    <section>
-                        <h2>But, DON'T do it with YouTube.</h2>
-                        <a href="http://www.youtube.com/watch?v=ru6wri23Ljk" target="_blank"><img src="images/youtube.png" style="width:60%;" /></a>
-                    </section>
-                    <section>
-                        <h2>Because it's awful!</h2>
-                        <a href="https://youtu.be/gI5ibuJUsZI" target="_blank"><img src="images/youtube2.jpg" style="width:60%;" /></a>
-                    </section>
-                    <section>
-                        <h2>Unless ... <small>they are edited</small></h2>
-                        <a href="https://support.google.com/youtube/answer/6054623?hl=en" target="_blank"><img src="images/youtube-contrib.png" style="width:50%;" /></a>
-                    </section>
-                    <section>
-                        <h2>Do it with style.</h2>
-                        <a href="http://responsivewebdesign.com/podcast/moosejaw/#episode-transcript" target="_blank"><img src="images/transcripts.png" style="width:80%;" /></a>
-                    </section>
-                </section>
-                <section>
-                    <section data-background="images/cat-alt-hard.jpg">
-                        <h2 class="why" style="width: 115%;margin-left: -1em;top: -5em;">Step 5. Meaningful Alternative Text</h2>
+                        <h2>5. Accessible SVGs</h2>
+                        <svg version="1" id="cat" viewBox="0 0 720 800" aria-labelledby="catTitle catDesc" role="img" style="width:200px;">
+                            <title id="catTitle">Pixels, My Super-friendly Cat</title>
+                            <desc id="catDesc">An illustrated gray cat with bright green eyes that is waving it's tail.</desc>
+                            <path id="tail" data-name="tail" class="cls-1" d="M545.9,695.9c8,28.2,23.2,42.3,27.2,46.9,21.4,24.1,41.5,40.2,81.1,42.9s65.4-14.2,60.8-26.8-23.1-9.1-51.3-8.3c-35.2.9-66.6-31.3-74.8-63.9s-7.9-63.8-36.8-85.5c-44.1-33-135.6-7.1-159.8-3.4s-48.4,52.5-9.6,45.1,91.4-23.1,123.2-12.7C537.8,640.4,537.9,667.7,545.9,695.9Z" transform="translate(-9.7 -9.3)"/>
+                            <g id="body">
+                                <path id="bg" class="cls-2" d="M447.9,502.1c2.1,151.7-108.3,167-216.5,167S9.7,663.8,9.7,510.9,85,242.9,231.3,241,445.8,350.4,447.9,502.1h0Z" transform="translate(-9.7 -9.3)"/>
+                                <g id="leftleg">
+                                    <path id="leg" class="cls-1" d="M195.6,671.5c-34.2-7.7-40.6-95.6-53.3-191-12-90-90.1-177.2-55.1-177.2s145.7,12,151.4,87.7S261.5,686.5,195.6,671.5Z" transform="translate(-9.7 -9.3)"/>
+                                    <path id="foot" class="cls-3" d="M172.2,688.1c31.6,2.1,56.6-8.7,59.8-32.4s-22.1-49.5-27.3-24.3c25-16.4-39.1-29.4-27.6-3.9,14-24.9-49.6-19.2-31.9-.1-6.5-27.2-35.6,8.2-30.1,29.3C121.5,681.8,140.5,686,172.2,688.1Z" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <g id="rightleg">
+                                    <path id="leg-2" data-name="leg" class="cls-1" d="M260.4,670.4c42.4-9.2,48.7-87.7,53.9-185.2,5.1-96,98.2-176.1,63.1-176.1s-164,15.7-164,111.8C213.4,420.9,199.1,683.7,260.4,670.4Z" transform="translate(-9.7 -9.3)"/>
+                                    <path id="foot-2" data-name="foot" class="cls-3" d="M279.4,689.8c-31.7,2-56.6-9-59.6-32.6s22.3-49.4,27.4-24.1c-24.9-16.5,39.2-29.2,27.6-3.8-13.9-25,49.7-18.9,31.9,0,6.6-27.1,35.6,8.4,30,29.4-6.7,25-25.7,29.1-57.3,31.1h0Z" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <path id="tuft" class="cls-3" d="M80,331.2c3.5,9.5,1.2,28.9,4.3,32.7s31.5-30,43-20.6c10.7,8.7,1.7,55.9,12.9,64.5,10.1,7.7,32.1-50.6,52.5-38.7,24.9,14.6,34.1,49.9,49,49.9,18.3,0,7.5-49.5,24.1-53.3s46.1,52.6,60.2,45.6c4.8-2.4,3-50.4,12-57.6,8.7-6.9,30.5,22.4,33.5,18.9,3.7-4.1.1-23.1,8.6-36.1,3.4-5.2,18.9-2.6,28.8-.4a3.46,3.46,0,0,0,3.7-5.2c-19.6-30.8-100-147.4-184.2-147.4-93.3,0-150.9,86.8-178.1,141.6a3.43,3.43,0,0,0,3.6,4.9C63,328.4,78.4,326.6,80,331.2Z" transform="translate(-9.7 -9.3)"/>
+                            </g>
+                            <g id="head">
+                                <path id="collar" class="cls-4" d="M367,231.1c5.7,36.1-4.7,71-97.8,85.6s-184-18.5-189.7-54.5,16.7-17.3,109.8-31.9,172-35.3,177.7.8" transform="translate(-9.7 -9.3)"/>
+                                <g id="bg-2" data-name="bg">
+                                    <path class="cls-1" d="M362.5,229.5C339.7,279,273.1,299.4,225,300c-60.6.7-134.7-29.5-153.5-86.4C45.6,135.4,132.2,32.6,225,35.8c96.1,3.4,171.7,119.4,137.5,193.7" transform="translate(-9.7 -9.3)"/>
+                                    <path class="cls-5" d="M362.5,229.5C339.7,279,273.1,299.4,225,300c-60.6.7-134.7-29.5-153.5-86.4C45.6,135.4,132.2,32.6,225,35.8,321.1,39.2,396.7,155.2,362.5,229.5Z" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <g id="leftear">
+                                    <path id="outer" class="cls-1" d="M92.7,117c-2.6,4.7-14.7-16.1-16.5-45-3.3-27.7,3.7-63.4,5.4-62C80.7,8,117,10,143,20c27.5,8.9,44.7,25.7,39.5,27.1-30,23.4-59.9,46.6-89.8,69.9" transform="translate(-9.7 -9.3)"/>
+                                    <path id="inner" class="cls-6" d="M105.8,106.9C103.9,110.3,95.3,95.5,94,75c-2.3-19.6,2.6-44.9,3.8-44-0.6-1.4,25.1,0,43.6,7.1,19.5,6.3,31.7,18.2,28,19.2q-31.8,24.9-63.6,49.6" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <path id="mask" class="cls-2" d="M338.4,142.5c-2.2,3.3,19.4,19.6,17.2,23.2s-24.3-7.8-25.8-5.2c-1.9,3.3,33.4,24.1,31,29.2-2.3,4.9-34-14.4-84.3-18.1a141.76,141.76,0,0,1-16.4-2.1,91.21,91.21,0,0,1-13.7-3.9c-19.8-6.9-27.7-10.6-32.7-12-19.3-5.7-26.8,11.3-68.1,22.4-18.8,5-37.9,9.7-54.4,0-2.1-1.3-13.6-8.3-16.7-21.1-0.9-3.6-2.8-15.2,10.5-34C146.3,34.3,216.5,34,217.3,34a131.52,131.52,0,0,1,58.4,14.3c-7.6,4.9-11.2,9.5-9,10.1,21.5,16.5,43.1,33,64.6,49.5,0.9,1.7,3.6-1.3,6.3-7.3,19.3,30.5,22.1,41.5,18.9,44.3-3.8,3.6-16.4-4.8-18.1-2.4" transform="translate(-9.7 -9.3)"/>
+                                <g id="rightear">
+                                    <path id="outer-2" data-name="outer" class="cls-2" d="M344.9,119.9c2.6,4.7,14.7-16.1,16.5-45,3.3-27.7-3.7-63.4-5.4-62,0.9-2-35.4,0-61.4,10-27.5,8.9-44.7,25.7-39.5,27.1q44.85,35,89.8,69.9" transform="translate(-9.7 -9.3)"/>
+                                    <path id="inner-2" data-name="inner" class="cls-6" d="M343.5,76.2a77.83,77.83,0,0,1-5.6,24.6c-15.1-20.3-36-39.8-61-52.4a82,82,0,0,1,19.2-9.1c18.5-7.1,44.2-8.5,43.6-7.1,1.2-.9,6.1,24.4,3.8,44" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <g id="nose">
+                                    <path class="cls-7" d="M205.1,201.8l-10.6-18.3a9,9,0,0,1,7.7-13.4h21.2a8.9,8.9,0,0,1,7.7,13.4l-10.6,18.3a8.91,8.91,0,0,1-15.4,0" transform="translate(-9.7 -9.3)"/>
+                                    <path class="cls-6" d="M194.2,175.1a9,9,0,0,0,.3,8.4l10.6,18.3a8.92,8.92,0,0,0,15.5,0l8.7-15c-5.8-6.2-19.3-10.1-35.1-11.7" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <g id="mouth">
+                                    <path class="cls-8" d="M166.7,260.4c-24.4,0-44.1-25-44.1-55.9m88.2,0c0,30.9-19.7,55.9-44.1,55.9m89.9,0c24.4,0,44.1-25,44.1-55.9m-88.2,0c0,30.9,19.7,55.9,44.1,55.9" transform="translate(-9.7 -9.3)"/>
+                                    <path class="cls-9" d="M300.7,204.5a65.16,65.16,0,0,1-8,32" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <path id="wiskers" class="cls-10" d="M188.7,198.4c0-12.9-72.7-23.3-162.6-23.3m162.6,36.2c0-7.1-65.8-12.9-147.1-12.9m196,1.3c1.4-12.8,74.8-15.6,164.1-6.2m-165.4,19c0.7-7.1,66.8-5.9,147.6,2.6" transform="translate(-9.7 -9.3)"/>
+                                <g id="lefteye" class="eye">
+                                    <path id="iris" class="cls-4" d="M188.6,141.5s-18.3,12.3-35.8,7.9-30-15.2-27.7-24c1.5-6,9.6-9.6,20.2-9.8a59.5,59.5,0,0,1,15.7,1.9,35.75,35.75,0,0,1,12.5,6.2,60,60,0,0,1,15.1,17.8" transform="translate(-9.7 -9.3)"/>
+                                    <path class="cls-11" d="M125.1,123.6c1.5-6,9.6-9.6,20.1-9.8a59.5,59.5,0,0,1,15.7,1.9,35.75,35.75,0,0,1,12.5,6.2,59.47,59.47,0,0,1,15.2,17.8" transform="translate(-9.7 -9.3)"/>
+                                    <path id="pupil" class="cls-12" d="M172.9,124.3c-2.3,9.2-10.7,15-18.7,13s-12.5-11.1-10.2-20.4a22.39,22.39,0,0,1,1.1-3.1,59.5,59.5,0,0,1,15.7,1.9,35.75,35.75,0,0,1,12.5,6.2,8.6,8.6,0,0,1-.4,2.4" transform="translate(-9.7 -9.3)"/>
+                                    <path id="eyelash" class="cls-13" d="M124.9,121.5c-7.6,2.6-17.1-4.7-21.1-16.3m33.6,9.5c-7.5,2.9-17.3-4-21.7-15.5m36.7,14.6c-8.1-.1-14.5-10.2-14.3-22.6" transform="translate(-9.7 -9.3)"/>
+                                    <path id="reflection" class="cls-14" d="M156.8,122c0,3.6-2.6,6.4-5.8,6.4s-5.8-2.9-5.8-6.4,2.6-6.4,5.8-6.4,5.8,2.9,5.8,6.4" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                                <g id="righteye" class="eye">
+                                    <path id="iris-2" data-name="iris" class="cls-4" d="M241.4,143.6s18.5,11.9,36,7.1,29.6-15.8,27.2-24.6c-1.7-6-9.8-9.4-20.3-9.4a59.21,59.21,0,0,0-15.6,2.2,37.44,37.44,0,0,0-12.4,6.4,60.14,60.14,0,0,0-14.9,18.3" transform="translate(-9.7 -9.3)"/>
+                                    <path id="lid" class="cls-11" d="M304.5,124.4c-1.7-6-9.8-9.4-20.3-9.4a59.21,59.21,0,0,0-15.6,2.2,37.44,37.44,0,0,0-12.4,6.4,61.21,61.21,0,0,0-14.9,18.1" transform="translate(-9.7 -9.3)"/>
+                                    <path id="pupil-2" data-name="pupil" class="cls-12" d="M256.7,126.1c2.5,9.2,11,14.8,18.9,12.6s12.3-11.4,9.8-20.6a16.59,16.59,0,0,0-1.2-3.1,59.21,59.21,0,0,0-15.6,2.2,37.44,37.44,0,0,0-12.4,6.4,9.23,9.23,0,0,0,.5,2.5" transform="translate(-9.7 -9.3)"/>
+                                    <path id="eyelash-2" data-name="eyelash" class="cls-13" d="M302.9,122.3c7.7,2.5,17-5,20.8-16.8M292,115.7c7.6,2.8,17.2-4.4,21.4-16M277,115.1c8.1-.3,14.3-10.5,13.9-22.8" transform="translate(-9.7 -9.3)"/>
+                                    <path id="reflection-2" data-name="reflection" class="cls-14" d="M271.1,127.1c0,3.6-2.6,6.5-5.8,6.5s-5.8-2.9-5.8-6.5,2.6-6.4,5.8-6.4,5.8,2.9,5.8,6.4" transform="translate(-9.7 -9.3)"/>
+                                </g>
+                            </g>
+                        </svg>
+<pre class="fragment fade-in" style="width: 90%;margin: 15px auto;">
+    <code>
+<svg version="1" id="cat" viewBox="0 0 720 800" aria-labelledby="catTitle catDesc" role="img" id="svg-cat">
+    <title id="catTitle">Pixels, My Super-friendly Cat</title>
+    <desc id="catDesc">An illustrated gray cat with bright green eyes that is waving it's tail.</desc>
+    <path id="tail" data-name="tail" class="cls-1" d="M545.9,695.9c8,28.2,23.2,42.3,27.2,46.9,21.4,24.1,41.5,40.2,81.1,42.9s65.4-14.2,60.8-26.8-23.1-9.1-51.3-8.3c-35.2.9-66.6-31.3-74.8-63.9s-7.9-63.8-36.8-85.5c-44.1-33-135.6-7.1-159.8-3.4s-48.4,52.5-9.6,45.1,91.4-23.1,123.2-12.7C537.8,640.4,537.9,667.7,545.9,695.9Z" transform="translate(-9.7 -9.3)"/>
+    <g id="head">
+        ...
+    </g>
+</svg>
+    </code>
+</pre>
                         <aside class="notes">
                             <ul>
-                                <li>Adding alt text to images is one of the easiest accessibility
-                                    principles to implement, but I find it one of the hardest to do well.</li>
-                                <li>Alternative text <em>should</em> present the CONTENT and FUNCTION of the image, short and sweet.</li>
-                                <li>Link, ect</li>
+                                <li>Use inline SVG (in the html)</li>
+                                <li>Provide a title (must be the first child of its parent element) </li>
+                                <li>Provide a description </li>
+                                <li>link the title and description with aria-labelledby="title desc"</li>
+                                <li>Use text - because it makes text in graphical content highly accessible. </li>
                             </ul>
                         </aside>
                     </section>
                     <section>
-                        <img src="images/alt-text-all.png" style="width:60%;" />
-                        <aside class="notes">
-                            <ul>
-                                <li>Every image must have an <code>alt</code> attribute in order to be w3c compliant.</li>
-                                <li>But - do all alt attributes need to have text?</li>
-                                <li>The answer is NO.</li>
-                                <li>Decorative images (for layout: spacers, dividers) should have null alt text (alt="").</li>
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>  
-                        <img src="images/alt-text-empty.png" style="width:100%;" />
-                        <aside class="notes">
-                            <ul>
-                                <li>When we talk about alternative text, it can be either in the <code>alt</code> attribute OR in the surrounding context of the image.</li>
-                                <li>Alternative text <em>should not</em>:
-                                    <ul>
-                                        <li>be redundant (be the same as adjacent or body text).</li>
-                                        <li>use the phrases "image of…" or "graphic of…" or "...logo".</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <h3>Testing Alt Text</h3>
-                        <img src="images/alt-text-viewer.png" style="width: 90%">
-                        <aside class="notes">
-                            <p>Using the Chrome Plugin, Alt text viewer, with a single click, you can see what screen readers will hear.</p>
-                        </aside>
-                    </section>
-                    <section>
-                        <h3>Figure and Figcaption</h3>
-                        <figure>
-                            <img src="images/cat-cactus.jpg" style="float: left; width: 45%" alt="Cat trying to take a bite out of a cactus plant.">
-                            <figcaption style="font-size: .85em;float: left; width: 45%; margin-left: 5%; text-align: left;margin-top: 1em;">Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
-                        </figure>
-                        <div style="clear: both;"></div>
-<pre>
-    <code>
-        <figure>
-            <img src="images/cat-cactus.jpg" alt="Cat trying to take a bite out of a cactus plant.">
-            <figcaption>Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
-        </figure>
-    </code>
-</pre>
-                        <aside class="notes">
-                            <p>When appropriate, you can use newish html5 elements figure and figcaption.</p>
-                        </aside>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>Off Screen Text for Icons</h2>
-                        <p>HTML</p>
-                        <img src="images/alt-icons.png" style="width: 100%;">
-                        <p class="fragment fade-in">CSS</p>
-<pre class="fragment fade-in">
-    <code>
-    //hiding text elements from the view, but keeping them available to the screen reader
-    .sr-only {
-        position: absolute !important;
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
-        clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); //for clip being deprecated
-    }
-    </code>
-</pre>
-                    </section>
-                </section>
-                <section>
-                    <h2>Accessible SVGs</h2>
-                    <svg version="1.1" width="300" height="100" aria-labelledby="title desc" role="img">
-                        <title id="title">Green rectangle</title>
-                        <desc id="desc">A light green rectangle with rounded corners and a dark green border.</desc>
-                        <rect width="200" height="100" rx="20" ry="20" fill="#90ee90" stroke="#228b22" stroke-fill="1"></rect>
-                        <text x="100" y="60" font-size="1em" text-anchor="middle" fill="#000000">Website</text>
-                    </svg>
-<pre class="fragment fade-in">
-    <code>
-        <svg version="1.1" width="300" height="100" aria-labelledby="title desc" role="img">
-            <title id="title">Green rectangle</title>
-            <desc id="desc">A light green rectangle with rounded corners and a dark green border.</desc>
-            <rect width="200" height="100" rx="20" ry="20" fill="#90ee90" stroke="#228b22" stroke-fill="1"></rect>
-            <text x="100" y="60" font-size="1em" text-anchor="middle" fill="#000000">Website</text>
-        </svg>
-    </code>
-</pre>
-                    <small>Example from: <a href="http://www.sitepoint.com/tips-accessible-svg/">Tips for Creating Accessible SVG</a> by Leonie Watson</small>
-                    <aside class="notes">
-                        <ul>
-                            <li>Use inline SVG (in the html)</li>
-                            <li>Provide a title (must be the first child of its parent element) </li>
-                            <li>Provide a description </li>
-                            <li>link the title and description with aria-labelledby="title desc"</li>
-                            <li>Use text - because it makes text in graphical content highly accessible. </li>
-                        </ul>
-                    </aside>
-                </section>
-                <section>
-                    <h2>Accessible Canvas</h2>
-                    <canvas style="border: 5px solid green; height:200px; width: 200px;"><p> text inside of a canvas element with paragraph tag </p></canvas><canvas style="border: 5px solid green; height:200px; width: 200px; margin-left: 20px;">text inside of a canvas element</canvas>
-<pre class="fragment fade-in">
+                        <h2>6. Accessible Canvas</h2>
+                        <canvas style="border: 5px solid green; height:200px; width: 200px; margin-left: 20px;">text inside of a canvas element</canvas>
+                        <canvas style="border: 5px solid green; height:200px; width: 200px;"><p> text inside of a canvas element with paragraph tag </p></canvas>
+<pre class="fragment fade-in" style="margin: 15px auto;">
     <code>
         <canvas>text inside of a canvas element</canvas>
         <canvas><p> text inside of a canvas element with paragraph tag </p></canvas>
     </code>
 </pre>
-                    <aside class="notes">
-                        <p>When using canvas you must provide content that conveys the same function/purpose as the bitmap canvas.
-                        <p>It can be as simple as providing text in the canvas. The text is not visually seen, but is read via the screen reader.</p>
-                    </aside>
-                </section>
-                <section data-background="images/readability-tests.png">
-                    <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">Step 6. Easy To Read and Understand Content</h2>
-                </section>
-                <section>
-                    <section>
-                        <h3>Readability and Comprehension</h3>
-                        <img src="images/text-rivereffect.png" style="width: 40%; margin-right:10%; float: left;">
-                        <div style="width: 50%; float: left;">
-                            <ul>
-                                <li class="fragment fade-in">Make sure the text is large enough and has proper contrast.</li>
-                                <li class="fragment fade-in">Choose easy to read fonts.</li>
-                                <li class="fragment fade-in">Left align the text. It's easier to read.</li>
-                                <li class="fragment fade-in">Keep in mind that users may have a hard time with visual, math or reading comprehension.
-                                <li class="fragment fade-in">Use clear and simple written content.</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Testing</h3>
-                        <a href="http://www.hemingwayapp.com/" target="_blank"><img src="images/hemingway-app.png" style="width: 100%;"></a>
                         <aside class="notes">
-                            <p>Use the hemingway app to test the site's written content</p>
+                            <p>When using canvas you must provide content that conveys the same function/purpose as the bitmap canvas.
+                            <p>It can be as simple as providing text in the canvas. The text is not visually seen, but is read via the screen reader.</p>
                         </aside>
                     </section>
-                </section>
-                <section data-background="images/disney-animation.jpg">
-                    <h2 class="why" style="margin-top: 2em;width: 113%;  margin-left: -1em;">Step 7.  Animation</h2>
-                </section>
-                <section>
-                    <h3>Things to avoid:</h3>
-                    <a href="http://alistapart.com/d/428/rd-contstruction.mp4" target="_blank" style="width: 50%; float: left; margin-right: 10px;"><img src="images/animation.png"></a>
-                    <div style="width: 45%; float: left;">
-                        <ul>
-                            <li class="fragment fade-in">Large areas of motion and the <strong>parallax</strong>-like effects of background and foreground moving at different speeds</li>
-                            <li class="fragment fade-in"><strong>Autoplaying carousels</strong> without controls to pause or stop it</li>
-                            <li class="fragment fade-in"><strong>Scrolljacking</strong> - background animates at a different speed than your scrolling effort</li>
-                        </ul>
-                    </div>
-                    <small style="margin-top: 20px">Check out: <a href="http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity">Designing Safer Web Animation For Motion Sensitivity</a> by Val Head</small>
-                    <aside class="notes">
-                        <p>Moving content can also be a annoying and distracting for some people.</p>
-                        <p>For people with ADD, it makes it difficult for them to concentrate on other parts of the Web page.</p>
-                        <p>But - for others it can trigger dizziness, nausea, migraines AND even seizures (epilepsy)</p>
-                        <p>If you want to use these types of features, provide a way for users to turn them off easily.</p>
-                    </aside>
-                </section>
-                <section data-background="images/forms.jpg">
-                    <h2 class="why" style="margin-top: 6em;width: 113%;  margin-left: -1em;">Step 8. Functional and Logical Forms</h2>
-                </section>
-                <section>
-                    <h3>Forms</h3>
-                    <ul style="width: 90%;">
-                        <li class="fragment fade-in">DO NOT use positive <code>tabindex="1"</code></li>
-                        <li class="fragment fade-in">Label everything and link the label to the input</li>
+                    <section>
+                        <h2>Off Screen Text</h2>
+                        <img src="images/alt-icons.png" style="width: 100%;">
+<pre class="fragment fade-in" style="margin: 15px auto;">
+    <code>
+//hiding text elements from the view, but keeping them available to the screen reader
+.sr-only {
+position: absolute !important;
+height: 1px;
+width: 1px;
+overflow: hidden;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); //for clip being deprecated
+}
+    </code>
+</pre>
+                    </section>
+                    <section data-background="images/forms.jpg">
+                        <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">7. Functional and Logical Forms</h2>
+                    </section>
+                    <section>
+                        <h3>Forms</h3>
+                        <ul style="width: 90%;">
+                            <li class="fragment fade-in">DO NOT use positive <code>tabindex="1"</code></li>
+                            <li class="fragment fade-in">Label everything and link the label to the input</li>
 <pre class="fragment fade-in">
 <code>
     <label for="email">Email Address</label>
@@ -1138,7 +1393,7 @@
 
 </code>
 </pre>
-                        <li class="fragment fade-in">Don't forget to label things that have hidden labels (search box). Use .sr-only class that is used for the icon fonts.</li>
+                            <li class="fragment fade-in">Don't forget to label things that have hidden labels (search box). Use .sr-only class that is used for the icon fonts.</li>
 <pre class="fragment fade-in">
 <code>
     <label class="sr-only" for="search">Search for Gift Cards</label>
@@ -1146,16 +1401,91 @@
 
 </code>
 </pre>
-                        <li class="fragment fade-in">Put the label/input group in a li tag and put all of these groupings in a list. </li>
-                        <li class="fragment fade-in">Check out: <a href="http://www.slideshare.net/AaronGustafson/falling-in-love-with-forms-an-event-apart-dc-2015" target="_blank">Falling in Love With Forms</a> by Aaron Gustafson</li>
-                    </ul>
-                </section>
-                <section>
-                    <section data-background="images/vo.jpg">
-                        <h2 class="why" style="margin-top: 6em;width: 113%;  margin-left: -1em;">Step 9. Test Using A Screen Reader</h2>
+                            <li class="fragment fade-in">Put the label/input group in a li tag and put all of these groupings in a list. </li>
+                            <li class="fragment fade-in">Check out: <a href="http://www.slideshare.net/AaronGustafson/falling-in-love-with-forms-an-event-apart-dc-2015" target="_blank">Falling in Love With Forms</a> by Aaron Gustafson</li>
+                        </ul>
                     </section>
                     <section>
-                        <a href="http://giftcards.com" target="_blank"><img src="images/voice-over.png" style="width:90%;"></a>
+                        <h2>Document</h2>
+                    </section>
+                    <section>
+                        <img src="images/style-guide-documentation-2.png" style="width:80%;">
+                        <aside class="notes">
+                            <p>Document best practices and provide:</p>
+                            <ul>
+                                <li>Explanation</li>
+                                <li>Samples</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/style-guide-documentation.png" style="width:80%;">
+                        <aside class="notes">
+                            <p>Document best practices and provide:</p>
+                            <ul>
+                                <li>Explanation</li>
+                                <li>Samples</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Add Automated Testing:</h2>
+                        <ul>
+                            <li>NPM: https://www.npmjs.com/browse/keyword/a11y</li>
+                            <ul><li>Gulp-a11y</li><li>Grunt-a11y</li><li> Tenon</li><li>Ember</li><li>React</li></ul>
+                            <li>pa11y (dashboard): http://pa11y.org/</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>pa11y <small>http://pa11y.org/</small></h2>
+                        <a href="http://demo.pa11y.org/" target="_blank"><img src="images/dashboard.png" style="width: 70%;"></a>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background="https://media.giphy.com/media/X5S8V68Sj8b2E/giphy.gif">
+                        <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">4. QA Testing</h2>
+                        <aside class="notes">
+                            <p>testing</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>QA Testing</h2>
+                        <ol>
+                            <li class="fragment fade-in">Tools</li>
+                            <li class="fragment fade-in">Assistive Technology</li>
+                            <li class="fragment fade-in">People</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h3>Online Testing Tools</h3>
+                        <ul>
+                            <li>http://wave.webaim.org/</li>
+                            <li>http://tenon.io/</li>
+                            <li>http://leaverou.github.io/contrast-ratio/</li>
+                            <li>http://www.hemingwayapp.com/</li>
+                        </ul>
+                        <h3 style="margin-top: 20px;">Chrome Testing Tools</h3>
+                        <ul>
+                            <li>Tenon</li>
+                            <li>Wave</li>
+                            <li>Chrome Developer Tools                     </li>
+                            <li>aXe</li>
+                            <li>NoCoffee</li>
+                        </ul>
+                        <aside class="notes">
+                            <p>Demo a few of these...</p>
+                            <p>Ask for a site to test...</p>
+                        </aside>
+                    </section>
+
+                    <section data-background="images/vo.jpg">
+                        <h2 class="why" style="margin-top: 4em;width: 113%;  margin-left: -1em;">Assistive Technology</h2>
+                    </section>
+                    <section>
+                        <h3>Screen Reader</h3>
+                        <a href="http://giftcards.com" target="_blank"><img src="images/voice-over.png" style="width:60%;"></a>
                         <aside class="notes">
                             <p>---play video-----</p>
                             <p>------Next slide--------</p>
@@ -1169,20 +1499,19 @@
                             <p>------Next slide--------</p>
                         </aside>
                     </section>
-                </section>
-                <section data-background="images/braille.jpg">
-                    <h2 class="why" style="width: 120%; margin-left: -2em;">Step 10. Test With Real Users</h2>
-                    <aside class="notes">
-                        <p>BUT - you can never replace seeing the real user experience.</p>
-                        <p>It's always eye-opening to conduct user testing.</p>
-                        <p>You never think somethings really "that bad" ... pause ... </p>
-                        <p>Until you realize someone has to have someone else to click a button for them because they cannot access it.</p>
-                        <p>You will see a different internet.</p>
-                    </aside>
-                </section>
-                <section>
+
+                    <section data-background="images/braille.jpg">
+                        <h2 class="why" style="width: 120%; margin-left: -2em;">Test With Real Users</h2>
+                        <aside class="notes">
+                            <p>BUT - you can never replace seeing the real user experience.</p>
+                            <p>It's always eye-opening to conduct user testing.</p>
+                            <p>You never think somethings really "that bad" ... pause ... </p>
+                            <p>Until you realize someone has to have someone else to click a button for them because they cannot access it.</p>
+                            <p>You will see a different internet.</p>
+                        </aside>
+                    </section>
                     <section class="fragment">
-                        <a href="https://adactio.com/journal/10104" target="_blank" ><img src="images/testing-real-users.png" style="width:90%;" alt="Don’t think of screen-reader testing as a form of browser testing; think of it as a form of usability testing."></a>
+                        <a href="https://adactio.com/journal/10104" target="_blank" ><img src="images/testing-real-users.png" style="width:80%;" alt="Don’t think of screen-reader testing as a form of browser testing; think of it as a form of usability testing."></a>
                     </section>
                     <section class="fragment">
                         <div>
@@ -1193,124 +1522,43 @@
                     </section>
                 </section>
                 <section>
-                    <section>
-                        <h2>Step 11: Record/Document the Audits</h2>
+                    <section class="fragment fade-in">
+                        <h1>How Many Folks are Feeling Overwhelmed?</h1>
                     </section>
                     <section>
-                        <p>Make note of pages you audit:</p>
-                        <img src="images/document-audit.png" style="width: 100%;">
+                        <h2>Remember: Progress is Better than Perfection</h2>
+                        <img src="images/perfect.png" style="width: 50%">
+                    </section>
+                    <section data-background="images/cat-yoda-2.jpg">
+                        <h1 class="why" style="width: 120%; margin-left: -.7em;margin-top: 3em;">Patience <br><small>You Must Have</small></h1>
+                    </section>
+                    <section class="fragment fade-in">
+                        <h2>Allow Involvement</h2>
+                        <a href="https://make.wordpress.org/accessibility/" target="_blank"><img src="images/wordpress-involved.png" style="width: 50%;"></a>
                         <aside class="notes">
-                            <ul>
-                                <li>Page (url)</li>
-                                <li>Date</li>
-                                <li>What issues were found</li>
-                                <li>Reason it's an issue</li>
-                                <li>Current Status</li>
-                                <li>Notes</li>
-                            </ul>
+                            <p>Open source provides so much to so many.</p>
+                            <p>So, it's only fair that folks pitch in and help make projects/products accessible.</p>
                         </aside>
                     </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>Step 12: Provide Code Samples</h2>
-                    </section>
-                    <section>
-                        <img src="images/style-guide-documentation-2.png" style="width:100%;">
-                        <aside class="notes">
-                            <p>Document best practices and provide:</p>
-                            <ul>
-                                <li>Explanation</li>
-                                <li>Samples</li>
-                            </ul>
-                        </aside>
-                    </section>
-                    <section>
-                        <img src="images/style-guide-documentation.png" style="width:100%;">
-                        <aside class="notes">
-                            <p>Document best practices and provide:</p>
-                            <ul>
-                                <li>Explanation</li>
-                                <li>Samples</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>Step 13: Add Testing to build Process</h2>
-                    </section>
-                    <section>
-                        <h2>So many ways:</h2>
-                        <ul>
-                            <li class="fragment fade-in">NPM: https://www.npmjs.com/browse/keyword/a11y</li>
-                            <ul class="fragment fade-in"><li>Gulp-a11y</li><li>Grunt-a11y</li><li> Tenon</li><li>Ember</li><li>React</li></ul>
-                            <li class="fragment fade-in">pa11y (dashboard): http://pa11y.org/</li>
-                        </ul>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>pa11y <small>http://pa11y.org/</small></h2>
-                        <a href="http://pa11y.org/" target="_blank"><img src="images/dashboard.png" style="width: 70%;"></a>
-                    </section>
-                </section>
-                <section>
-                    <h3>Online Testing Tools</h3>
-                    <ul>
-                        <li>http://wave.webaim.org/</li>
-                        <li>http://tenon.io/</li>
-                        <li>http://leaverou.github.io/contrast-ratio/</li>
-                        <li>http://www.hemingwayapp.com/</li>
-                    </ul>
-                    <h3 style="margin-top: 20px;">Chrome Testing Tools</h3>
-                    <ul>
-                        <li>Tenon</li>
-                        <li>Wave</li>
-                        <li>Chrome Developer Tools                     </li>
-                        <li>aXe</li>
-                        <li>NoCoffee</li>
-                    </ul>
-                    <aside class="notes">
-                        <p>Use the nocoffee plugin to test the blur and other filters</p>
-                    </aside>
-                </section>
-                <section>
-                    <h2>Remember to Vet Your Framework/Library/Features</h2>
-                    <ol>
-                        <li>Bootstrap</li>
-                        <ul>
-                            <li><a href="http://assets.cms.gov/resources/framework/3.0/Pages/" target="_blank">Assets Framework</a></li>
-                            <li><a href="http://paypal.github.io/bootstrap-accessibility-plugin/demo.html" target="_blank">Paypal's Version</a></li>
-
-                        </ul>
-                        <li><a href="https://docs.angularjs.org/api/ngAria" target="_blank">Angular</a></li>
-                        <li><a href="https://make.wordpress.org/accessibility/" target="_blank">WordPress</a></li>
-                        <li><a href="https://playbook.cio.gov/designstandards/getting-started/" target="_blank">U.S. Web Design Standards</a></li>
-                    </ol>
-                </section>
-                <section>
-                    <h2>Progress is Better than Perfection</h2>
-                    <img src="images/perfect.png" style="width: 50%">
-                </section>
-                <section data-background="images/cat-yoda-2.jpg">
-                    <h1 class="why" style="width: 120%; margin-left: -.7em;margin-top: 3em;">Patience <br><small>You Must Have</small></h1>
                 </section>
                 <section class="reset-bg-size" data-background="images/slack.svg">
                     <h2 class="why" style="width: 120%;margin-left: -1em;">When You Need Help <br><small>A11y Slackers: http://web-a11y.herokuapp.com/ or #a11y on twitter</small></h2>
                 </section>
                 <section data-background="images/cat-computer.jpg">
-                    <h1 class="why" style="width: 120%;margin-left: -1em;margin-top: 3em;">Resources <br> <small>hmig.me/a11y-resources</small></h1>
+                    <h1 class="why" style="width: 120%;margin-left: -1em;margin-top: 2.5em;">Resources <br> <small>hmig.me/a11y-resources</small></h1>
                 </section>
                 <section data-background="images/Cat-Rolls-In-A-Ball.gif">
                     <h1 style="font-size: 8em; ">Thank you. </h1>
+                </section>
+                <section data-background="#333">
+                    <h1 class="disclaimer" style="text-align: center; font-size: 8em;">Questions?</h1>
                 </section>
 
             </div>
         </div>
 
         <footer>
-            <p>Heather Migliorisi | @_hmig | hmig.me</p>
+            <img src="images/bhn-logo.svg" alt="employed by BlackHawk" role="img" class="float-left" style="height: 40px; border-right: 2px solid rebeccapurple; padding-right: 1em; margin-right: 1em;"><p>Heather Migliorisi / <a href="https://twitter.com/_hmig" style="text-decoration: none; font-weight: 900;">@_hmig</a> on <img src="images/twitter.svg" alt="Twitter" role="img" style="vertical-align: bottom;"></p>
         </footer>
 
         <script src="lib/js/head.min.js"></script>
