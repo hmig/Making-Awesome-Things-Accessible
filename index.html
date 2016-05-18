@@ -14,8 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css" id="theme">
@@ -36,11 +35,6 @@
 
 
     <style>
-        .reveal h1, .reveal h2{
-            /*font-family: 'Fredericka the Great', cursive;*/
-            /*font-family: 'Kranky', cursive;*/
-            /*font-weight: 100;*/
-        }
         ol.no-num {
             list-style: none;
         }
@@ -255,36 +249,36 @@
             <div class="slides">
                 <section data-background="images/accessibility-dark.jpg">
                     <div class="intro">
-                        <h1 style="color:beige;">Making Awesome Things Accessible</h1>
-                        <h2 style="color:crimson;">Heather Migliorisi</h2>
+                        <h1 style="color:white; font-family: 'Lobster Two', cursive; font-size: 4em;">Making Awesome Things Accessible</h1>
+                        <h2 style="color:limegreen;">Heather Migliorisi</h2>
                     </div>
                     <aside class="notes">
                         <p>Hi.</p>
-                        <p>My name is Heather Migliorisi and I'm a Software Engineer for BlackHawk Network and I work on the site GiftCards.com.</p>
+                        <p>My name is Heather Migliorisi and I'm a Software Engineer for BlackHawk Network and I work on the GiftCards.com website.</p>
                     </aside>
                 </section>
                 <section data-background="#333">
-                    <h1 class="disclaimer">Disclaimer: Everything presented here is my own and not reflect the views of my employer.</h1>
+                    <h1 class="disclaimer">Disclaimer: Everything presented here is my own and does not reflect the views of my employer.</h1>
                     <aside class="notes">
                         <p>Disclaimer...</p>
                     </aside>
                 </section>
                 <section data-background="#333">
-                    <h1 class="no-shadow" style="color: steelblue;font-size: 5em;">Making Awesome Things Accessible</h1>
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 5.5em; font-family: 'Lobster Two', cursive;">Making Awesome Things Accessible</h1>
                 </section>
                 <section data-background="#333">
-                    <h1 class="no-shadow" style="color: steelblue;font-size: 6em;">What are Awesome Things?</h1>
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 5em; font-family: 'Lobster Two', cursive;">What are Awesome Things?</h1>
                 </section>
                 <section data-background="images/Opensource.png" data-state="bg-contain">
-                    <h1 class="why" style="margin: -.5em -2%; width: 110%; font-size: 3.5em;">Open Source Projects are AWESOME!!!</h1>
+                    <h1 class="why" style="margin: -.5em -2%; width: 110%; font-size: 3.5em; ">Open Source Projects are AWESOME!!!</h1>
                     <aside class="notes">
-                        <ol>
-                            <li></li>
-                        </ol>
+                        <p>Open source has an extended reach and greater impact than any kind of closed software today.</p>
+                        <p>I can't find any hard numbers/statistics to back that up. </p>
+                        <p>But, you see it used everywhere. I can't imagine not to using it.</p>
                     </aside>
                 </section>
                 <section data-background="#333">
-                    <h1 class="no-shadow" style="color: steelblue;font-size: 6em;">What is (Web) Accessibility?</h1>
+                    <h1 class="no-shadow" style="color: steelblue;font-size: 6em; font-family: 'Lobster Two', cursive;">What is (Web) Accessibility?</h1>
                 </section>
                 <section data-background="images/accessibility-dark.jpg">
                     <section>
@@ -294,14 +288,14 @@
                             </blockquote>
                         </div>
                         <aside class="notes">
-                            <p>It means a digital world for everyone, regardless of ability.</p>
+                            <p>Web Accessibility means a digital world for everyone, regardless of ability.</p>
                         </aside>
                     </section>
                 </section>
                 <section data-background="images/disability-text.jpg">
                     <h1 class="why" style="margin-top: 3.3em;margin-left: -1em;width: 120%;"> Classifications</h1>
                     <aside class="notes">
-                        <p>Disability Classifications or Buckets</p>
+                        <p>The types of disabilities we need to be aware of are:</p>
                     </aside>
                 </section>
                 <section>
@@ -318,21 +312,15 @@
                     </ul>
                     <aside class="notes">
                         <p>Let's start with vision</p>
-                        <p>There are 4 types of visual classifications, the first is color blindness or difficulty distinguishing between colors.</p>
-                        <p>WEB content that simply relies on color to convey meaning may cause certain users to be lost</p>
-                        <p>such as Alerts or error messages, so it's best to add icons or special styling with those</p>
+                        <p>There are 3 types of visual classifications</p>
+                        <!--<p>WEB content that simply relies on color to convey meaning may cause certain users to be lost</p>-->
+                        <!--<p>such as Alerts or error messages, so it's best to add icons or special styling with those</p>-->
+                        <p>1. Color Blindness </p>
 
-                        <p>The next type of visual classification is Low Vision</p>
-                        <p>So - the majority of visually impaired are not completely blind...but have some sort vision impairment.</p>
-                        <p>such as: blurry, cloudy, center field loss or, the opposite, tunnel vision</p>
-                        <p>You can expect these users to zoom in on the page, so RWD can really help here.</p>
+                        <p>2. Low Vision ... Note - the majority of visually impaired are not completely blind...but have some sort vision impairment.</p>
 
-
-                        <p>The next type of visual classification is blindness.</p>
-                        <ul>
-                            <li>Blindness ranges from See Nothing to having Light Perception (seeing shadows, shapes and figures) to Legally Blind (like looking through wax paper) to seeing geometric shapes and colors. </li>
-                            <li>The last section of the image is from the BBC, where a blind was describing what he sees and this was the rendered image from that: http://www.bbc.com/news/blogs-ouch-31487662</li>
-                        </ul>
+                        <p>3. Blindness</p>
+                        <!--<p>Blindness ranges from See Nothing to having Light Perception (seeing shadows, shapes and figures) to Legally Blind (like looking through wax paper) to seeing geometric shapes and colors.</p>-->
                         <p>!!!!!show video of blind man using iphone</p>
 
                     </aside>
@@ -345,7 +333,7 @@
                     <aside class="notes">
                         <p>The next classification is hearing</p>
                         <p>providing closed captioning and transcripts are very important for people with hearing loss</p>
-                        <p>It's also important to consider providing video communications for ppl who prefer to communicate through sign language.</p>
+                        <!--<p>It's also important to consider providing video communications for ppl who prefer to communicate through sign language.</p>-->
                     </aside>
                 </section>
                 <section>
@@ -355,30 +343,20 @@
                             <path d="M17.015 10.589h-12.758s-4.28 0-4.28 4.999v14.278c-0.004 0.047-0.006 0.101-0.006 0.155 0 1.153 0.935 2.088 2.088 2.088s2.088-0.935 2.088-2.088c0-0.055-0.002-0.109-0.006-0.163l0-12.751h0.742v14.15l11.366-0.058v-14.069h0.719v0.162c-0.004 0.047-0.006 0.101-0.006 0.155 0 1.153 0.935 2.088 2.088 2.088s2.088-0.935 2.088-2.088c0-0.055-0.002-0.109-0.006-0.163l0-1.628c0.162-5.069-4.117-5.069-4.117-5.069z"></path>
                         </svg>
                             Motor <small>(approx 19.9 million people)</small></h1>
+                        <aside class="notes">
+                            <p>The next classification is Motor Disabilities</p>
+                            <p>Motor Disabilities can be the result of either:</p>
+                            <p>Traumatic Injuries, Diseases or Congenital Conditions </p>
+                        </aside>
                     </section>
                     <section>
-                        <a href="video/mouth-stick.m4v" target="_blank"><img src="images/physical3.png" style="width:55%;" alt="image of a woman without arms using a mouthstick to type on a keyboard"></a>
+                        <a href="https://www.youtube.com/watch?v=4gVloz3FY2g" target="_blank"><img src="images/physical3.png" style="width:55%;" alt="image of a woman without arms using a mouthstick to type on a keyboard"></a>
                         <br>
                         <small>
                             <a href="https://www.youtube.com/watch?v=4gVloz3FY2g" target="_blank">Video</a>
                         </small>
                         <aside class="notes">
-                            <p>The next classification is Motor Disabilities</p>
-                            <p>Motor Disabilities can be the result of either:</p>
-                            <p>Traumatic Injuries which include things like</p>
-                            <ul>
-                                <li>Spinal cord injury</li>
-                                <li>Loss or damage of limb(s)</li>
-                            </ul>
-                            <p>OR Diseases and Congenital Conditions such as:</p>
-                            <ul>
-                                <li>Cerebral palsy</li>
-                                <li>Muscular dystrophy</li>
-                                <li>Arthritis</li>
-                                <li>Parkinson's disease</li>
-                            </ul>
-                            <p>The picture is of a child using a mouth stick.</p>
-                            <p>Here's a video via YouTube of someone using one. -------- play video ----------</p>
+                            <p>Here's an example of someone without arms using the computer. -------- play video ----------</p>
                         </aside>
                     </section>
                     <section class="fragment">
@@ -386,9 +364,8 @@
                         <br>
                         <small style="font-size:.4em;"><a href="https://www.etsy.com/au/listing/64832134/mouthstick-stylus-3-options?ref=shop_home_active_11" target="_blank">Listing from Etsy's shapedad</a></small>
                         <aside class="notes">
-                            <p>There are a lot of different types of Assistive Technologies to aid people with motor disabilities</p>
-                            <p>Pictured are some handmade ones found via etsy</p>
-                            <p>Others types include:</p>
+                            <p>There are a lot of different types of Assistive Technologies to aid people with motor disabilities.</p>
+                            <p>Some not pictured are:</p>
                             <ul>
                                 <li>an over-sized trackball mouse</li>
                                 <li>an adaptive keyboard</li>
@@ -396,7 +373,7 @@
                                 <li>Voice recognition software</li>
                             </ul>
                             <p>NOTE - Regardless, most assistive technologies either work through the keyboard or emulate the keyboard.</p>
-                            <p>BUT - Keep in Mind - These folks have limited mobility ... Don't autoplay things page ... but if you do, provide controls to allow users to stop the elements. </p>
+                            <!--<p>BUT - Keep in Mind - These folks have limited mobility ... Don't autoplay things page ... but if you do, provide controls to allow users to stop the elements. </p>-->
                         </aside>
                     </section>
                 </section>
@@ -410,7 +387,7 @@
                         </svg>
                             Cognitive <small>(approx 9.4 million people)</small></h1>
                         <aside class="notes">
-                            <p>Cognitive Disabilities Include (but are not limited to):</p>
+                            <p>Cognitive Disabilities Include things like:</p>
                             <ul>
                                 <li>Autism</li>
                                 <li>Attention Deficit Disorder (ADD)</li>
@@ -434,38 +411,34 @@
                             <p>Avoid: </p>
                             <p>-content overload</p>
                             <p>-blinking animations (can induce seizures)</p>
-                            <p>-things like carousels (that autoplay and cannot be stopped ARE the worst ... for everyone) and  parallax can literally make people sick</p>
+                            <p>-things like carousels (that autoplay and cannot be stopped) and  parallax can literally make people sick</p>
                         </aside>
                     </section>
                 </section>
                 <section data-background="images/cat-you.png">
                     <h1 class="why" style="margin-left: -1em;width: 120%;">What about you?</h1>
                     <aside class="notes">
-                        <p>Just because you don't fall into one of these classification today, doesn't mean you can't or won't in the future.</p>
+                        <p>Just because you don't fall into one of these classification today, doesn't mean you can't benefit from the solutions designed for those considerations.</p>
                     </aside>
                 </section>
                 <section>
                     <section class="fragment fade-in" data-background="images/environmental-issues.png" data-state="bg-contain">
                         <h1 class="why" style="margin-top: 1em; width: 120%;font-size: 3.4em;margin-left: -1em;">Environmental Conditions</h1>
                         <aside class="notes">
-                            <p>Trying to use a device in a loud (like a crowded bus w/o headphones) or outside on a bright/sunny day</p>
+                            <p>Have you ever forgotten your headphones on the bus (loud and crowded) or tried using your device outside on a bright and sunny day?</p>
+                            <p>things like transcripts/cc OR good contrast benefit YOU in those scenarios</p>
                         </aside>
                     </section>
                     <section class="fragment fade-in" data-background="images/other-issues.png" data-state="bg-contain">
                         <h1 class="why" style="margin-left: -1em;width: 120%; margin-top: 3.3em;">Temporarily Disabled</h1>
                         <aside class="notes">
-                            <p>Have you ever:</p>
-                            <ol>
-                                <li>Broken an arm</li>
-                                <li>Had laryngitis or an ear infection</li>
-                                <li>Had cataracts removed</li>
-                            </ol>
+                            <p>Or have you ever had a broken an arm or had an ear infection?</p>
                         </aside>
                     </section>
                     <section class="fragment fade-in" data-background="images/older.png" data-state="bg-contain">
                         <h1 class="why" style="margin-top: 3em;margin-left: -1em;width: 120%;">Getting Older</h1>
                         <aside class="notes">
-                            <p>Getting older</p>
+                            <p>Show of hands, who's NOT getting older?</p>
                         </aside>
                     </section>
                 </section>
@@ -473,7 +446,8 @@
                     <h1 class="why" style="margin-left: -1em;width: 120%;">What are the benefits?</h1>
                     <aside class="notes">
                         <p>Why should the open source community care about accessibility?</p>
-                        <p>The reasons are the same for everyone because these are important when selecting what tools to use for a project.</p>
+                        <p>The reasons are the same for everyone regardless of open source or not.</p>
+                        <p>BUT, the added benefit of open source projects being accessible is the reach you have and the exponential impact.</p>
                     </aside>
                 </section>
                 <section>
@@ -485,12 +459,23 @@
                         <li class="fragment fade-in">Future Technology</li>
                         <li class="fragment fade-in">Ethical</li>
                     </ol>
+                    <aside class="notes">
+                        <ol>
+                            <li>Money</li>
+                            <li>Legal</li>
+                            <li>Benefits Everyone</li>
+                            <li>Future Technology</li>
+                            <li>Ethical</li>
+                        </ol>
+                    </aside>
                 </section>
                 <section>
                     <section class="fragment fade-in">
-                        <h1>M<svg aria-hidden="true" style="width: 45px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 1em; vertical-align: baseline;position: absolute;left: 548px;top: 41px;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="" height="28" viewBox="-6 0 28 28">
+
+                        <h1><svg aria-hidden="true" style="width: 45px; height: auto; fill: white; background: rebeccapurple;padding: 11px;border-radius: 1em; vertical-align: baseline;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="" height="28" viewBox="-6 0 28 28">
                             <path d="M15.281 18.516q0 2.391-1.555 4.117t-4.039 2.133v2.734q0 0.219-0.141 0.359t-0.359 0.141h-2.109q-0.203 0-0.352-0.148t-0.148-0.352v-2.734q-1.031-0.141-1.992-0.484t-1.586-0.695-1.156-0.75-0.727-0.586-0.273-0.281q-0.266-0.328-0.031-0.641l1.609-2.109q0.109-0.156 0.359-0.187 0.234-0.031 0.375 0.141l0.031 0.031q1.766 1.547 3.797 1.953 0.578 0.125 1.156 0.125 1.266 0 2.227-0.672t0.961-1.906q0-0.438-0.234-0.828t-0.523-0.656-0.914-0.586-1.031-0.5-1.25-0.508q-0.609-0.25-0.961-0.391t-0.961-0.414-0.977-0.484-0.883-0.555-0.836-0.664-0.68-0.766-0.555-0.906-0.328-1.039-0.133-1.219q0-2.156 1.531-3.781t3.984-2.094v-2.812q0-0.203 0.148-0.352t0.352-0.148h2.109q0.219 0 0.359 0.141t0.141 0.359v2.75q0.891 0.094 1.727 0.359t1.359 0.523 0.992 0.586 0.609 0.453 0.234 0.219q0.266 0.281 0.078 0.594l-1.266 2.281q-0.125 0.234-0.359 0.25-0.219 0.047-0.422-0.109-0.047-0.047-0.227-0.187t-0.609-0.414-0.914-0.5-1.164-0.406-1.336-0.18q-1.484 0-2.422 0.672t-0.938 1.734q0 0.406 0.133 0.75t0.461 0.648 0.617 0.516 0.875 0.484 0.945 0.422 1.094 0.43q0.828 0.313 1.266 0.492t1.188 0.547 1.18 0.664 0.969 0.781 0.828 0.992 0.492 1.195 0.203 1.469z"></path>
-                        </svg>oney</h1>
+                        </svg>
+                            Money</h1>
                         <ol>
                             <li class="fragment fade-in">Larger potential consumer/user base
                                 <ul>
@@ -507,7 +492,7 @@
                         <aside class="notes">
                             <p>According to Census Data: Nearly 1 in 5 People Have a Disability in the U.S.</p>
                             <p>Opening your business up to 20% more of the population doesn't mean you'll make 20% more, but at least you won't be preventing it</p>
-                            <p>Think about how low of a usage % before you are able to stop supporting a browser version ... such as IE8.</p>
+                            <!--<p>Think about how low of a usage % before you are able to stop supporting a browser version ... such as IE8.</p>-->
                             <p>Also - Businesses must comply with Section 508 when supplying Electronic and Information Technology <strong>goods and services to the federal government</strong>.  </p>
                         </aside>
                     </section>
@@ -525,8 +510,9 @@
                         </ol>
                         <small style="margin-top: 1em;" class="fragment fade-in"><a href="http://www.karlgroves.com/2011/12/08/reduction-of-legal-risk-as-accessibility-business-case/" target="_blank">Reduction of Legal Risk as Web Accessibility Business Case</a> and <a href="http://www.karlgroves.com/2011/11/15/list-of-web-accessibility-related-litigation-and-settlements/" target="_blank">List of Lawsuits</a></small>
                         <aside class="notes">
-                            <p>Title III of the ADA requires that public and private establishments provide reasonable accommodations to the disabled and the DOJ has stated that law applies online as well.</p>
-                            <p>So - You can save money by preventing loss due to legal fees, settlement costs, and harm to brand/identity</p>
+                            <p>Title III of the ADA requires that public and private establishments provide reasonable accommodations to the disabled</p>
+                            <p>the DOJ has stated that law applies online as well.</p>
+                            <p>So - inaccessibility can lead to legal fees, settlement costs, and harm to brand/identity</p>
                         </aside>
                     </section>
                     <section class="fragment">
@@ -534,8 +520,8 @@
                             <path d="M9.266 14q-2.531 0.078-4.141 2h-2.094q-1.281 0-2.156-0.633t-0.875-1.852q0-5.516 1.937-5.516 0.094 0 0.68 0.328t1.523 0.664 1.859 0.336q1.047 0 2.078-0.359-0.078 0.578-0.078 1.031 0 2.172 1.266 4zM26 23.953q0 1.875-1.141 2.961t-3.031 1.086h-13.656q-1.891 0-3.031-1.086t-1.141-2.961q0-0.828 0.055-1.617t0.219-1.703 0.414-1.695 0.672-1.523 0.969-1.266 1.336-0.836 1.742-0.313q0.156 0 0.672 0.336t1.141 0.75 1.672 0.75 2.109 0.336 2.109-0.336 1.672-0.75 1.141-0.75 0.672-0.336q0.953 0 1.742 0.313t1.336 0.836 0.969 1.266 0.672 1.523 0.414 1.695 0.219 1.703 0.055 1.617zM10 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828zM21 10q0 2.484-1.758 4.242t-4.242 1.758-4.242-1.758-1.758-4.242 1.758-4.242 4.242-1.758 4.242 1.758 1.758 4.242zM30 13.516q0 1.219-0.875 1.852t-2.156 0.633h-2.094q-1.609-1.922-4.141-2 1.266-1.828 1.266-4 0-0.453-0.078-1.031 1.031 0.359 2.078 0.359 0.922 0 1.859-0.336t1.523-0.664 0.68-0.328q1.937 0 1.937 5.516zM28 4q0 1.656-1.172 2.828t-2.828 1.172-2.828-1.172-1.172-2.828 1.172-2.828 2.828-1.172 2.828 1.172 1.172 2.828z"></path>
                         </svg>
                             Benefits Everyone</h1>
-                        <img class="fragment fade-in" src="images/curb-cutouts.png" style="width: 65%;box-shadow: none;">
-                        <small class="fragment fade-in"  style="font-size: .5em; width: 100%;">Image from Microsoft's <a href="https://www.microsoft.com/en-us/design/practice" target="_blank">Inclusive Design Toolkit</a> </small>
+                        <img src="images/curb-cutouts.png" style="width: 65%;box-shadow: none;">
+                        <small style="font-size: .5em; width: 100%;">Image from Microsoft's <a href="https://www.microsoft.com/en-us/design/practice" target="_blank">Inclusive Design Toolkit</a> </small>
                         <aside class="notes">
                             <p>How many people do you see using curb cutouts and elevators that are not disabled?</p>
                             <p>All of these folks are able to benefit from the features added for people labeled with having disabilities.</p>
@@ -553,8 +539,7 @@
                         <aside class="notes">
                             <p>You can retain information better if you read and hear it at the same time.</p>
                             <p>So - reading the transcript of a podcast while you listen to it </p>
-                            <p>Contrast</p>
-                            <p>Usability</p>
+                            <p>And good contrast levels makes content easier for everyone to read</p>
                         </aside>
                     </section>
                     <section class="fragment">
@@ -577,7 +562,8 @@
                             <br><a href="https://youtu.be/KkOCeAtKHIc?t=12s" target="_blank">Amazon Echo</a>
                         </p>
                         <aside class="notes">
-                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                            <p> And conversational interfaces</p>
+                            <p>!!!PLAY VIDEO!!!</p>
                         </aside>
                     </section>
                     <section class="fragment">
@@ -590,7 +576,7 @@
 
                         </ol>
                         <aside class="notes">
-                            <p> By using proper markup and the latest standards, the content becomes more flexible and easier to use tools to extract and present the information to users in different modalities (gym equipment, refrigerator, ...).</p>
+                            <p> It's the right thing to do.</p>
                         </aside>
                     </section>
                 </section>
@@ -612,7 +598,7 @@
                     <section data-background="images/no-internet1.jpg">
                         <h1 class="why" style="margin-top: 3.3em;width: 120%; margin-left: -1em;">#O<small style="vertical-align: text-bottom;">ne</small>D<small style="vertical-align: text-bottom;">ay</small>W<small style="vertical-align: text-bottom;">ithout</small>I<small style="vertical-align: text-bottom;">nternet</small></h1>
                         <aside class="notes">
-                            <p>But - what if you couldn't access the internet today? Can you imagine being the only one not able to access it ... without help from someone else?</p>
+                            <p>Could you go without using the web?</p>
                         </aside>
                     </section>
                 </section>
@@ -642,25 +628,31 @@
                         <h1 class="disclaimer" style="text-align: center; ">What if...
                         <br> <small>every website you visited and app you used was like this?</small>
                         </h1>
-                    </section>
-                    <section data-background="images/tableFlip.gif" data-state="bg-contain">
-                        <h1 class="why" style="margin-top: -1.5em;width: 120%; margin-left: -1em; font-size: 3em;">When do you give up?</h1>
                         <aside class="notes">
                             <p>What if ... every site you went to was like this?</p>
                             <p>What if ... you could no longer use the internet you helped develop?</p>
                             <p>What if you had to ask someone to click buttons for you....?</p>
+                        </aside>
+                    </section>
+                    <section data-background="images/tableFlip.gif" data-state="bg-contain">
+                        <h1 class="why" style="margin-top: -1.5em;width: 120%; margin-left: -1em; font-size: 3em;">When do you give up?</h1>
+                        <aside class="notes">
                             <p>At what point, do you give up?</p>
-                            <p>Sadly, this is what much of the web is like for people with disabilities.</p>
                         </aside>
                     </section>
                 </section>
                 <section data-background="#333">
                     <h1 class="disclaimer" style="text-align: center; ">Giving up <small>is not an option for people with disabilities.</small></h1>
+                    <aside class="notes">
+                        <p>Sadly, this is what much of the web is like for people with disabilities and giving up is not an option.</p>
+                    </aside>
                 </section>
 
                 <section>
-                    <h1> Let's do our part <small> to fix the problem.</small></h1>
+                    <h1> Let's do our part <small> to fix this problem.</small></h1>
                     <aside class="notes">
+                        <p>So, with open source having such a large reach and huge impact ...</p>
+                        <p>let's do our part to fix this problem.</p>
                     </aside>
                 </section>
                 <section>
@@ -686,15 +678,18 @@
                             <li class="fade-in fragment">Using poor semantics</li>
                             <li class="fade-in fragment">Audio/Video (without cations/transcripts)</li>
                             <li class="fade-in fragment">Javascript (manipulating the dom)</li>
+                            <li class="fade-in fragment">Not enough contrast for text elements</li>
+                            <li class="fade-in fragment">Bad link text (e.g. click here)</li>
                         </ul>
                         <aside class="notes">
-                            <p>Generally speaking, common accessibility mistakes found are:</p>
+                            <p>Generally speaking, common accessibility issues found on sites today:</p>
                             <ul>
                                 <li>Overriding browser defaults (tabindex, outline)</li>
                                 <li>Implementing Bad semantics</li>
                                 <li>Adding Audio/Video without cations/transcripts</li>
                                 <li>And Javascript added functionality is not accessible without special help ... which I'll talk about later</li>
                                 <li>Not enough contrast for text elements</li>
+                                <li>Bad link text (e.g. click here)</li>
                             </ul>
                         </aside>
                     </section>
@@ -708,13 +703,13 @@
                     <section class="fragment fade-in">
                         <a href="https://twitter.com/HugoGiraudel/status/691945278404952064" target="_blank"><img src="images/production-ready.png" style="width:60%;"></a>
                         <aside class="notes">
-                            <p>...</p>
+                            <p>Uggggg</p>
                         </aside>
                     </section>
                     <section class="fragment fade-in">
                         <a href="https://twitter.com/artem_tabalin/status/731146816943689728" target="_blank"><img src="images/production-ready-response.png" style="width:60%;"></a>
                         <aside class="notes">
-                            <p>...</p>
+                            <p>BUT - now there's a follow up article discussing accessible web components by the same author.</p>
                         </aside>
                     </section>
                     <section data-background="images/Foundation.jpg">
@@ -722,21 +717,24 @@
                         <aside class="notes">
                             <p>Accessibility is NOT a feature, it's part of the foundation.</p>
                             <p>Think about building a house without a foundation....</p>
-                            <p>...would you just shrug it off and say you'll add it later?</p>
                         </aside>
                     </section>
                     <section data-background="images/leaning_tower.jpg">
                         <h1 class="why" style="width: 115%;left: -1em;">When you think you'll add accessibility later.</h1>
                         <aside class="notes">
+                            <p>...would you just shrug it off and say you'll add it later? What's that process look like?</p>
+                            <p>Realistically, you'd probably never do that because it seems like it'd be more work than it's worth, right...?</p>
+                            <p>That said, it's a lot of work to add accessibility to a something after it's already done.</p>
                         </aside>
                     </section>
                 </section>
                 <section data-background="#333">
-                    <h1 class="disclaimer" style="text-align: center; ">Getting Started</h1>
+                    <h1 class="disclaimer" style="text-align: center; font-family: 'Lobster Two', cursive;">Who Should be Responsible for Accessibility?</h1>
                 </section>
                 <section>
                     <h1>Accessibility is not <small>a specialist position.</small></h1>
-                    <p>One person cannot make and maintain an accessible product alone.</p>
+                    <p>One person* cannot make and maintain an accessible product alone.</p>
+                    <small><sup>*</sup>Unless this is a tiny, one person product/project.</small>
                 </section>
                 <section>
                     <h1>Accessibility <small>needs to be a</small> product goal.</h1>
@@ -848,25 +846,6 @@
                             </ul>
                         </aside>
                     </section>
-                    <section>
-                        <h3>Figure and Figcaption</h3>
-                        <figure>
-                            <img src="images/cat-cactus.jpg" style="float: left; width: 45%" alt="Cat trying to take a bite out of a cactus plant.">
-                            <figcaption style="font-size: .85em;float: left; width: 45%; margin-left: 5%; text-align: left;margin-top: 1em;">Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
-                        </figure>
-                        <div style="clear: both;"></div>
-<pre>
-<code>
-    <figure>
-        <img src="images/cat-cactus.jpg" alt="Cat trying to take a bite out of a cactus plant.">
-        <figcaption>Be careful when choosing houseplants if you have pets. They may be poisonous to the animal.</figcaption>
-    </figure>
-</code>
-</pre>
-                        <aside class="notes">
-                            <p>When appropriate, you can use newish html5 elements figure and figcaption.</p>
-                        </aside>
-                    </section>
                     <section data-background="images/cc.png">
                         <h2 class="why">3. Closed Captions</h2>
                     </section>
@@ -973,6 +952,7 @@
                         <aside class="notes">
                             <p>use aXe plugin and chrome accessibility tools</p>
                             <p>Use the nocoffee plugin to test the blur and other filters</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                     <section data-background="images/classification.jpg">
@@ -1004,6 +984,7 @@
                         <a href="videos/color-blindness.m4v" target="_blank"><img src="images/maps.png" style="width: 60%"></a>
                         <aside class="notes">
                             <p>Using the Chrome Plugin, NoCoffee, you can easily change settings to see the page in different hues.</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                     <section>
@@ -1011,6 +992,7 @@
                         <a href="videos/color-blindness-option.m4v" target="_blank"><img src="images/color-blind.png" style="width: 50%"></a>
                         <aside class="notes">
                             <p>This example provides an option for colorblind which swaps out the green for blue.</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                     <section data-background="images/readability-tests.png">
@@ -1039,6 +1021,7 @@
                         </p>
                         <aside class="notes">
                             <p>Do NOT remove the default :focus { outline: none; outline: 0; }! Update the css if you do not like how it looks, but do not remove it! It is imperative for ppl that nav via keyboard to see what the focus is on.</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                     <section data-background="images/disney-animation.jpg">
@@ -1060,6 +1043,7 @@
                             <p>For people with ADD, it makes it difficult for them to concentrate on other parts of the Web page.</p>
                             <p>But - for others it can trigger dizziness, nausea, migraines AND even seizures (epilepsy)</p>
                             <p>If you want to use these types of features, provide a way for users to turn them off easily.</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                 </section>
@@ -1090,8 +1074,6 @@
                         <img src="images/aria-html5.png" alt=" " style="width:25%;">
                         <aside class="notes">
                             <p>ARIA - Accessible Rich Internet Applications -  </p>
-                            <p>This standard allows developers to set roles, states and properties on html elements </p>
-                            <p>defines methods to make Web content and Web applications more accessible to people using assistive technology</p>
                         </aside>
                     </section>
                     <section>
@@ -1235,6 +1217,7 @@
                         </p>
                         <aside class="notes">
                             <p>Do NOT remove the default :focus { outline: none; outline: 0; }! Update the css if you do not like how it looks, but do not remove it! It is imperative for ppl that nav via keyboard to see what the focus is on.</p>
+                            <p>PLAY VIDEO!!!!</p>
                         </aside>
                     </section>
                     <section>
@@ -1523,15 +1506,18 @@ clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); //for clip being depreca
                 </section>
                 <section>
                     <section class="fragment fade-in">
-                        <h1>How Many Folks are Feeling Overwhelmed?</h1>
+                        <h1>Please Don't Feel Overwhelmed?</h1>
                     </section>
                     <section>
-                        <h2>Remember: Progress is Better than Perfection</h2>
-                        <img src="images/perfect.png" style="width: 50%">
+                        <h2 style="font-family: 'Lobster Two', cursive;font-size: 5em;"> Progress is Better than Perfection</h2>
+                        <!--<img src="images/perfect.png" style="width: 40%">-->
                     </section>
-                    <section data-background="images/cat-yoda-2.jpg">
-                        <h1 class="why" style="width: 120%; margin-left: -.7em;margin-top: 3em;">Patience <br><small>You Must Have</small></h1>
+                    <section>
+                        <img src="images/perfect.png" style="width: 40%">
                     </section>
+                    <!--<section data-background="images/cat-yoda-2.jpg">-->
+                        <!--<h1 class="why" style="width: 120%; margin-left: -.7em;margin-top: 3em;">Patience <br><small>You Must Have</small></h1>-->
+                    <!--</section>-->
                     <section class="fragment fade-in">
                         <h2>Allow Involvement</h2>
                         <a href="https://make.wordpress.org/accessibility/" target="_blank"><img src="images/wordpress-involved.png" style="width: 50%;"></a>
@@ -1546,6 +1532,9 @@ clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); //for clip being depreca
                 </section>
                 <section data-background="images/cat-computer.jpg">
                     <h1 class="why" style="width: 120%;margin-left: -1em;margin-top: 2.5em;">Resources <br> <small>hmig.me/a11y-resources</small></h1>
+                </section>
+                <section data-background="#333">
+                    <h1 style="color:white;">Slides <br> <small>http://hmig.github.io/Making-Awesome-Things-Accessible/#/</small></h1>
                 </section>
                 <section data-background="images/Cat-Rolls-In-A-Ball.gif">
                     <h1 style="font-size: 8em; ">Thank you. </h1>
